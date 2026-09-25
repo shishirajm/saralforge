@@ -1,5 +1,19 @@
 # Saral Labs website implementation handoff
 
+## Deployment update — 26 September 2026
+
+The user asked to deploy this site and confirmed that the owned domain is `saralforge.com`, with future product subdomains at `trellis.saralforge.com` and `planbox.saralforge.com`.
+
+- A dedicated GCP project, `saralforge-web-prod`, now exists under organisation `1061246246516`. Billing is enabled and Firebase has been added.
+- A non-indexed, 30-day Firebase preview was deployed at `https://saralforge-web-prod--preview-xj1a3fpm.web.app` and expires on 26 October 2026 (Australia/Sydney).
+- `saralforge.com` and `www.saralforge.com` have not been connected. The production publishing gate still blocks the custom-domain cutover.
+- The domain registration and public Cloud DNS zone currently remain in `trellis-app-504909`. That project also contains Trellis-labelled Terraform state, so it was not repurposed or renamed during this release.
+- Production URL metadata now uses `https://saralforge.com` rather than the superseded `sarallabs.com` value.
+- Deployment source and checks are defined in `package.json`, `firebase.json`, `.firebaserc`, `scripts/`, `tests/`, `docs/url-inventory.csv`, `docs/publishing-approvals.json`, and `docs/plans/2026-09-26-gcp-firebase-deployment.md`.
+- The project has no Git repository. `dist/` is disposable output from `npm run build`.
+
+Before connecting the custom domain, obtain and record the verified contact destination, retention policy, legal identity requirements, audience/leading-offer approval, and final claims approval. Then run `npm run check:production`, deploy the live channel, connect the apex in Firebase Hosting, and configure `www` as a redirect to the apex.
+
 Updated: 20 September 2026 (Australia/Sydney)
 
 ## User objective

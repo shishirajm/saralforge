@@ -6,9 +6,11 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "build": "npm test && node scripts/build.mjs",
-    "serve": "firebase emulators:start --only hosting",
+    "serve": "firebase emulators:start --only hosting --project saralforge-web-prod",
     "check:contrast": "node src/check-contrast.mjs",
     "check:preview": "node scripts/check-publish.mjs",
-    "check:production": "node scripts/check-publish.mjs --production"
+    "check:production": "node scripts/check-publish.mjs --production",
+    "deploy:preview": "npm run check:preview && firebase hosting:channel:deploy preview --project saralforge-web-prod --expires 30d",
+    "deploy:production": "npm run check:production && firebase deploy --only hosting --project saralforge-web-prod"
   }
 }
