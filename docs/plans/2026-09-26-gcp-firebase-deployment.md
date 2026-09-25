@@ -23,6 +23,15 @@ Use one project per product and environment when a non-production environment is
 
 The registration and public zone currently live in `trellis-app-504909`. Do not move or rename live resources during this website release. Use that zone only to add the Firebase records, then plan a separate, rollback-tested migration to the shared core project if the existing project contains Trellis infrastructure that cannot be cleanly separated.
 
+## Deployment status
+
+- `saralforge-web-prod` is the dedicated Firebase Hosting project for the website.
+- A non-indexed preview is deployed at `https://saralforge-web-prod--preview-xj1a3fpm.web.app` until 26 October 2026.
+- A monthly A$15 budget alert, approximately matching the requested US$10 budget, is scoped to the website project. It alerts at 50%, 90%, actual 100% and forecast 100%; it is not a hard spend cap.
+- Shishir has approved the primary audience and offer, final copy and claims, and the Sydney/Australia identity. ABN publication is deferred.
+- `forgesaral@gmail.com` is the intended contact destination, but delivery has not been implemented or tested. The enquiry retention period also awaits approval.
+- The apex domain and `www` remain unchanged until the production gate passes.
+
 ## Order of work
 
 1. Replace production URL metadata with `https://saralforge.com` while retaining preview `noindex` protection.

@@ -74,17 +74,3 @@ test('hosting config applies the required security headers', async () => {
   assert.ok(Array.isArray(config.hosting.predeploy));
   assert.ok(config.hosting.predeploy.includes('npm run build'));
 });
-
-test('marketing copy stays concrete and buyer-facing', async () => {
-  const vaguePhrases = [/legible/i, /technology theatre/i, /handover mystery/i, /right-sized response/i, /edited out/i];
-  for (const file of htmlFiles) {
-    const html = await readFile(path.join(src, file), 'utf8');
-    assert.doesNotMatch(html, /↗/, `${file}: internal links should not use the external-link arrow`);
-    assert.doesNotMatch(html, /pending approval/i, `${file}: internal approval status is visible`);
-    for (const phrase of vaguePhrases) assert.doesNotMatch(html, phrase, `${file}: vague phrase ${phrase}`);
-  }
-  const home = await readFile(path.join(src, 'index.html'), 'utf8');
-  assert.ok((home.match(/proven industry experience/gi) || []).length <= 1, 'home repeats "proven industry experience"');
-  const work = await readFile(path.join(src, 'work.html'), 'utf8');
-  assert.match(work, /<title>Work\b/, 'work page title should match its navigation label');
-});

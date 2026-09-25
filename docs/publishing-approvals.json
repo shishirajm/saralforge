@@ -1,8 +1,10 @@
 {
-  "audienceAndLeadingOfferApproved": false,
-  "claimsApproved": false,
-  "contactDestination": null,
+  "audienceAndLeadingOfferApproved": true,
+  "audienceAndLeadingOffer": "Small business owners needing websites and practical AI/LLM solutions.",
+  "claimsApproved": true,
+  "contactDestination": "forgesaral@gmail.com",
   "contactDeliveryVerified": false,
-  "legalIdentityApproved": false,
+  "legalIdentityApproved": true,
+  "legalIdentityNote": "Sydney/Australia identity claims approved by Shishir. ABN publication is explicitly deferred until it is supplied.",
   "retentionPolicyApproved": false
 }

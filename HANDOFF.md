@@ -7,12 +7,15 @@ The user asked to deploy this site and confirmed that the owned domain is `saral
 - A dedicated GCP project, `saralforge-web-prod`, now exists under organisation `1061246246516`. Billing is enabled and Firebase has been added.
 - A non-indexed, 30-day Firebase preview was deployed at `https://saralforge-web-prod--preview-xj1a3fpm.web.app` and expires on 26 October 2026 (Australia/Sydney).
 - `saralforge.com` and `www.saralforge.com` have not been connected. The production publishing gate still blocks the custom-domain cutover.
+- A monthly A$15 budget alert is scoped to `saralforge-web-prod`, approximating the requested US$10 amount. Alerts trigger at 50%, 90%, actual 100% and forecast 100%; this is not a hard spend cap.
 - The domain registration and public Cloud DNS zone currently remain in `trellis-app-504909`. That project also contains Trellis-labelled Terraform state, so it was not repurposed or renamed during this release.
 - Production URL metadata now uses `https://saralforge.com` rather than the superseded `sarallabs.com` value.
 - Deployment source and checks are defined in `package.json`, `firebase.json`, `.firebaserc`, `scripts/`, `tests/`, `docs/url-inventory.csv`, `docs/publishing-approvals.json`, and `docs/plans/2026-09-26-gcp-firebase-deployment.md`.
 - The project has no Git repository. `dist/` is disposable output from `npm run build`.
 
-Before connecting the custom domain, obtain and record the verified contact destination, retention policy, legal identity requirements, audience/leading-offer approval, and final claims approval. Then run `npm run check:production`, deploy the live channel, connect the apex in Firebase Hosting, and configure `www` as a redirect to the apex.
+The primary audience and offer, final claims/copy, Sydney/Australia identity and intended contact address are now recorded as approved. ABN publication is deferred. Before connecting the custom domain, approve the enquiry retention period and implement and test the chosen contact delivery path. Then remove the preview crawl blocks, run `npm run check:production`, deploy the live channel, connect the apex in Firebase Hosting, and configure `www` as a redirect to the apex.
+
+Use `npm run deploy:preview` and `npm run deploy:production`; do not use a bare `firebase deploy`. `.firebaserc` deliberately has no default project so an accidental deploy without an explicit target fails. A CI-enforced production gate still depends on creating a Git repository and deployment workflow.
 
 Updated: 20 September 2026 (Australia/Sydney)
 
@@ -34,7 +37,7 @@ Do not reinstall or invoke Superpowers unless the user explicitly changes that i
 - The authoritative brief is `inputs/sarallabs-website-build-prompt-v3.md`.
 - `inputs/index.html` and `inputs/services.html` are historical explorations and must not guide the new design.
 - Keep all implementation work in `src/` unless the user asks otherwise.
-- Do not publish. Required facts such as D1 audience/offer approval, contact address, retention policy, client evidence, and product statuses remain unconfirmed.
+- Do not publish until the current deployment gate passes. Audience/offer, final copy/claims, Sydney/Australia identity and the intended contact address are approved; retention and end-to-end contact delivery remain unresolved.
 
 The `sites:sites-building` skill was used for the implementation. Its source is:
 
@@ -106,7 +109,7 @@ The fresh dependency-free static site is in `src/`:
 
 ## Content and publishing status
 
-The brief says D1 audience/offer selection and several claims are blocking decisions. The user has not supplied those approvals in this session.
+On 26 September 2026, Shishir approved the audience and leading offer as small business owners needing websites and practical AI/LLM solutions. Shishir also approved the final copy/claims and the Sydney/Australia identity, provided `forgesaral@gmail.com` as the intended contact destination, and explicitly deferred adding an ABN.
 
 To avoid publishing unsupported claims:
 
@@ -116,13 +119,12 @@ To avoid publishing unsupported claims:
 - Client names, testimonials, metrics, ABN, contact details, retention claims, experience years and employer names are absent.
 - The site remains `noindex, nofollow` and the contact form does not transmit.
 
-Before publication, the next agent must obtain or record:
+Before publication, the next agent must:
 
-1. D1 primary audience, primary problem and leading offer.
-2. Approved client/project evidence and product statuses.
-3. Contact destination and retention policy.
-4. Legal entity/ABN and any other required footer information.
-5. Approval to remove preview/noindex protections.
+1. Obtain approval for the enquiry retention period.
+2. Implement and test the chosen contact delivery path to `forgesaral@gmail.com`.
+3. Remove preview/noindex protections only as part of the approved production release.
+4. Keep unverified project evidence and product statuses labelled as illustrative or pending approval.
 
 ## Reviews already completed
 
