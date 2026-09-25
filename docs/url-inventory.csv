@@ -1,9 +1,14 @@
 url,status,redirect_target,notes
 https://saralforge.com/,preview,,Canonical apex home
 https://saralforge.com/services.html,preview,,Services
-https://saralforge.com/work.html,preview,,Illustrative problem patterns
+https://saralforge.com/work.html,preview,,Illustrative example workflows
 https://saralforge.com/about.html,preview,,Studio principles
 https://saralforge.com/start.html,preview,,Local-only project brief form
 https://saralforge.com/privacy.html,preview,,Preview privacy statement
 https://saralforge.com/terms.html,preview,,Preview terms
+https://saralforge.com/products.html,unpublished,,Product information intentionally withheld and noindexed
+https://saralforge.com/robots.txt,preview,,Whole-site preview crawl block
+https://saralforge.com/sitemap.xml,preview,,Public URL inventory for the future launch domain
+https://saralforge.com/llms.txt,preview,,Machine-readable site summary
+https://saralforge.com/.well-known/security.txt,preview,,Security contact points to the disabled preview contact route
 https://www.saralforge.com/,planned-redirect,https://saralforge.com/,Configure as a Firebase custom-domain redirect at launch

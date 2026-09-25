@@ -97,14 +97,10 @@
   .eyebrow span + span { color: var(--muted-dark); }
   .hero h1 { max-width: 11.5ch; font-size: clamp(3.25rem, 6.1vw, 7.25rem); }
   .hero-lede { max-width: 40rem; margin-top: 1.5rem; color: var(--muted-dark); font-size: clamp(1.08rem, 1.5vw, 1.3rem); }
-  .experience-proof { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: center; max-width: 39rem; margin-top: 1.5rem; padding: .85rem 1rem; border: 1px solid color-mix(in oklab, var(--violet) 44%, transparent); background: color-mix(in oklab, var(--ink-2) 86%, transparent); }
-  .experience-proof strong { color: var(--violet-light); font-family: var(--display); font-size: clamp(3.2rem, 5vw, 5.25rem); font-weight: 500; line-height: .8; letter-spacing: -.06em; }
-  .experience-proof p { color: var(--muted-dark); font-size: .86rem; line-height: 1.45; }
-  .experience-proof span { display: block; margin-bottom: .25rem; color: var(--text-dark); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
   .hero-actions { display: flex; align-items: center; gap: 1.6rem; margin-top: 2rem; }
   .button { display: inline-flex; justify-content: center; align-items: center; gap: 1.6rem; min-height: 3.25rem; padding: .85rem 1.2rem; border: 1px solid transparent; text-decoration: none; font-size: .88rem; font-weight: 700; }
   .button span { transition: transform .3s var(--ease); }
-  .button:hover span { transform: translate(.2rem, -.2rem); }
+  .button:hover span { transform: translateX(.2rem); }
   .button--primary { background: var(--blue); color: var(--ink); }
   .button--dark { background: var(--ink); color: var(--text-dark); }
   .text-link { display: inline-flex; gap: .7rem; align-items: center; font-weight: 700; text-decoration: none; border-bottom: 1px solid currentColor; }
@@ -123,11 +119,6 @@
   .quick-read span { color: var(--violet); }
   .quick-read strong { display: block; margin-top: .45rem; font-size: .92rem; font-weight: 500; }
 
-  .problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid color-mix(in oklab, var(--ink) 22%, transparent); border-left: 1px solid color-mix(in oklab, var(--ink) 22%, transparent); }
-  .problem-grid article { min-height: 21rem; padding: clamp(1.5rem, 3.5vw, 3.5rem); border-right: 1px solid color-mix(in oklab, var(--ink) 22%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--ink) 22%, transparent); }
-  .problem-grid article > span { color: var(--violet-dark); font-size: .68rem; font-weight: 800; letter-spacing: .14em; }
-  .problem-grid h3 { max-width: 12ch; margin-top: clamp(2.5rem, 5vw, 5rem); }
-  .problem-grid p { max-width: 34rem; margin-top: 1.5rem; color: var(--muted-light); }
 
   .work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.25rem; }
   .work-item { min-height: 31rem; padding: clamp(1.5rem, 3vw, 3rem); display: flex; flex-direction: column; border: 1px solid color-mix(in oklab, var(--ink) 17%, transparent); }
@@ -140,8 +131,6 @@
   .work-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: auto; padding-top: 3rem; }
   .work-detail p { color: inherit; font-size: .86rem; line-height: 1.55; }
   .work-detail p span { display: block; margin-bottom: .55rem; opacity: .65; font-size: .63rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-  .status { margin-top: 2rem; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-  .status i { display: inline-block; width: .45rem; height: .45rem; margin-right: .5rem; border-radius: 50%; background: currentColor; }
   .section-link { display: flex; justify-content: space-between; margin-top: 2rem; padding: 1.2rem 0; border-top: 1px solid var(--line); text-decoration: none; font-weight: 700; }
 
   .simplify { min-height: 52rem; }
@@ -269,18 +258,13 @@
   html[data-theme="light"] .hero,
   html[data-theme="light"] .page-hero.chapter--ink { background-color: var(--paper); color: var(--text-light); }
   html[data-theme="light"] .hero-lede,
-  html[data-theme="light"] .experience-proof,
   html[data-theme="light"] .eyebrow span + span,
   html[data-theme="light"] .page-hero.chapter--ink > p:not(.kicker) { color: var(--muted-light); }
   html[data-theme="light"] .hero em,
   html[data-theme="light"] .page-hero.chapter--ink em { color: var(--violet-dark); }
-  html[data-theme="light"] .experience-proof strong,
   html[data-theme="light"] .text-link--light { color: var(--violet-dark); }
-  html[data-theme="light"] .experience-proof,
   html[data-theme="light"] .quick-read,
   html[data-theme="light"] .quick-read div + div { border-color: color-mix(in oklab, var(--ink) 17%, transparent); }
-  html[data-theme="light"] .experience-proof { background: color-mix(in oklab, var(--paper-2) 85%, transparent); }
-  html[data-theme="light"] .experience-proof span { color: var(--text-light); }
   html[data-theme="light"] .quick-read span,
   html[data-theme="light"] .page-hero.chapter--ink .kicker { color: var(--violet-dark); }
   html[data-theme="light"] .contours path { stroke: color-mix(in oklab, var(--violet-dark) 38%, transparent); }
@@ -340,8 +324,6 @@
     .hero { min-height: auto; grid-template-rows: auto; gap: 2.5rem; padding-top: 8rem; }
     .eyebrow { justify-content: space-between; margin-bottom: 2.5rem; }
     .hero h1 { max-width: 11ch; }
-    .experience-proof { grid-template-columns: auto 1fr; padding: .9rem; }
-    .experience-proof strong { font-size: 3rem; }
     .hero-actions { align-items: flex-start; flex-direction: column; }
     .hero-art { min-height: 23rem; }
     .growth-field { inset: -3rem -5rem auto -4rem; width: calc(100% + 9rem); }
@@ -351,8 +333,6 @@
     .quick-read div + div { padding-left: 0; border-left: 0; }
     .section-heading { grid-template-columns: 1fr; gap: 1.5rem; }
     .section-heading > p:last-child { grid-column: auto; }
-    .problem-grid { grid-template-columns: 1fr; }
-    .problem-grid article { min-height: 0; }
     .work-grid { display: block; }
     .work-item { min-height: 28rem; margin-bottom: 1rem; }
     .work-item--violet { min-height: 24rem; }
@@ -389,8 +369,7 @@
   }
 
   @media (forced-colors: active) {
-    .button, .header-cta, .theme-toggle, .work-item, .logo-frame, .experience-proof, .problem-grid article { border: 1px solid ButtonText; }
-    .status i { background: CanvasText; }
+    .button, .header-cta, .theme-toggle, .work-item, .logo-frame { border: 1px solid ButtonText; }
     .growth-line, .tangle-main, .tangle-ghost, .contours path { stroke: CanvasText; }
     .preview-note, .field input, .field textarea { border: 1px solid CanvasText; }
     .site-nav a::after { background: LinkText; }
