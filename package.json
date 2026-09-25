@@ -1,0 +1,14 @@
+{
+  "name": "saral-forge-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "npm test && node scripts/build.mjs",
+    "serve": "firebase emulators:start --only hosting",
+    "check:contrast": "node src/check-contrast.mjs",
+    "check:preview": "node scripts/check-publish.mjs",
+    "check:production": "node scripts/check-publish.mjs --production"
+  }
+}

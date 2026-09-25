@@ -1,0 +1,32 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "color": {
+    "ink": { "950": { "$type": "color", "$value": "#0F1315" } },
+    "text": {
+      "dark": { "$type": "color", "$value": "#F3F1FA" },
+      "light": { "$type": "color", "$value": "#16141F" }
+    },
+    "muted": {
+      "dark": { "$type": "color", "$value": "#A79FC4" },
+      "light": { "$type": "color", "$value": "#59536E" }
+    },
+    "violet": {
+      "300": { "$type": "color", "$value": "#B773F5" },
+      "500": { "$type": "color", "$value": "#AA61F2" },
+      "800": { "$type": "color", "$value": "#6B21C4" }
+    },
+    "blue": {
+      "500": { "$type": "color", "$value": "#1984FF" },
+      "800": { "$type": "color", "$value": "#14418F" }
+    },
+    "paper": {
+      "50": { "$type": "color", "$value": "#F7F5FC" },
+      "100": { "$type": "color", "$value": "#EFEBF8" },
+      "warm": { "$type": "color", "$value": "#EAE6F5" }
+    },
+    "feedback": {
+      "error": { "$type": "color", "$value": "#7D1D18" },
+      "success": { "$type": "color", "$value": "#365F32" }
+    }
+  }
+}

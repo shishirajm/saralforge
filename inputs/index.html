@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saral Labs | Simplicity in Innovation</title>
+  
+  <!-- Importing fonts for the preview (Montserrat and Inter as a placeholder for your variable body font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 
+      Phase 1: Design Tokens 
+      Mapped exactly to the specs in 000-website-brief.md 
+    */
+    :root {
+      --color-ink-950: #0F1315;
+      --color-gold-300: #F3DB7C;
+      --color-gold-500: #D5B15B;
+      --color-gold-700: #B89042;
+      --color-orange-500: #E77A29;
+      --color-yellow-400: #F6CD3F;
+      --gradient-sprout: linear-gradient(135deg, #F6CD3F, #EFB038, #ED902F);
+      
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    /* Base Reset & Dark-First Styling */
+    body {
+      margin: 0;
+      background-color: var(--color-ink-950);
+      color: var(--color-gold-500);
+      font-family: var(--font-body);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero-container {
+      max-width: 800px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* 
+      Placeholder for the WebGPU Living Sprout Component 
+      Will be replaced by: <saral-sprout-hero></saral-sprout-hero>
+    */
+    .sprout-canvas-placeholder {
+      width: 100px;
+      height: 140px;
+      margin-bottom: 2.5rem;
+      background: var(--gradient-sprout);
+      border-radius: 50px 0 50px 50px; /* Rough visual approximation of the sprout shape */
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--color-gold-300);
+      margin: 0 0 1rem 0;
+      text-wrap: balance;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--color-gold-500);
+      margin-bottom: 3.5rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* CTA Layout */
+    .actions {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .btn {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Primary Action: Orange background, Dark text */
+    .btn-primary {
+      background-color: var(--color-orange-500);
+      color: var(--color-ink-950);
+      border: 2px solid var(--color-orange-500);
+    }
+
+    .btn-primary:hover {
+      background-color: #D66A18; /* Slightly darker orange */
+      border-color: #D66A18;
+      transform: translateY(-2px);
+    }
+
+    /* Secondary Action: Ghost button with Gold outline */
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-gold-300);
+      border: 2px solid var(--color-gold-700);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(184, 144, 66, 0.15); /* Tint of gold-700 */
+      transform: translateY(-2px);
+    }
+
+    /* Progressive Enhancement: Stack buttons on mobile */
+    @media (max-width: 600px) {
+      .actions {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .btn {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+    
+    /* Accessibility: Focus rings using Yellow.400 */
+    .btn:focus-visible {
+      outline: 3px solid var(--color-yellow-400);
+      outline-offset: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="hero-container">
+    
+    <!-- Phase 3: Insert <saral-sprout-hero> Lit Component here -->
+    <div class="sprout-canvas-placeholder" aria-label="Saral Labs animated sprout logo"></div>
+
+    <h1>Simple solutions.<br>Real results.</h1>
+    <p class="tagline">Simplicity in Innovation</p>
+
+    <div class="actions">
+      <a href="/start" class="btn btn-primary">Start a project</a>
+      <a href="/health-check" class="btn btn-secondary">Check your website</a>
+    </div>
+    
+  </main>
+
+</body>
+</html>

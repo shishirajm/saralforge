@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Saral Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-ink-950: #0F1315;
+      --color-gold-300: #F3DB7C;
+      --color-gold-500: #D5B15B;
+      --color-gold-700: #B89042;
+      --color-orange-500: #E77A29;
+      --color-yellow-400: #F6CD3F;
+      --color-surface: #171C1E; /* OKLCH tint of ink.950 for cards */
+      
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--color-ink-950);
+      color: #E2E8F0; /* Warm grey neutral */
+      font-family: var(--font-body);
+      padding: 4rem 2rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--color-gold-300);
+      margin: 0 0 0.5rem 0;
+    }
+
+    p.subtitle {
+      color: var(--color-gold-500);
+      font-size: 1.125rem;
+      margin: 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--color-surface);
+      border: 1px solid rgba(184, 144, 66, 0.2); /* Faded gold-700 */
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover, .card:focus-visible {
+      border-color: var(--color-yellow-400);
+      transform: translateY(-4px);
+      outline: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--color-orange-500);
+      margin: 0 0 1rem 0;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+      text-wrap: pretty;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Capabilities</h1>
+      <p class="subtitle">Simple solutions for complex workflows.</p>
+    </header>
+
+    <div class="services-grid">
+      <!-- Mapped from Phase 3 of the brief -->
+      <a href="/services/websites" class="card">
+        <h2>Websites that work</h2>
+        <p>Design, build, managed hosting, SEO foundations, and analytics for small businesses and owner-operators.</p>
+      </a>
+      
+      <a href="/services/booking-systems" class="card">
+        <h2>Booking & Scheduling</h2>
+        <p>Automate your calendar. Go from enquiry to quote to confirmed service without manual data entry.</p>
+      </a>
+
+      <a href="/services/ai-automation" class="card">
+        <h2>AI & Agent Automation</h2>
+        <p>Triage enquiries and draft replies automatically. The model proposes, deterministic code decides.</p>
+      </a>
+
+      <a href="/services/custom-apps" class="card">
+        <h2>Custom Web & Mobile Apps</h2>
+        <p>Customer portals, internal dashboards, and React Native apps for unique business workflows.</p>
+      </a>
+
+      <a href="/services/cloud" class="card">
+        <h2>Cloud, Platform & Cost Clarity</h2>
+        <p>AWS/GCP setup with infrastructure as code (Terraform). Untangle your bill so every dollar has an owner.</p>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

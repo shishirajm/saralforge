@@ -1,0 +1,15 @@
+# Saral Forge
+
+> Saral Forge is a Sydney software studio that applies proven industry experience to websites, apps, automation and cloud systems.
+
+## Main pages
+
+- [Home](https://saralforge.com/): Studio overview, selected work and services
+- [Services](https://saralforge.com/services.html): Websites, booking, automation, applications and cloud engineering
+- [Work](https://saralforge.com/work.html): Illustrative problem patterns, not client case studies
+- [About](https://saralforge.com/about.html): Studio principles and approach
+- [Start a project](https://saralforge.com/start.html): Preview-only project brief form
+
+## Accuracy
+
+The preview form does not transmit or store submitted information. Product information is not currently published.
