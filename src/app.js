@@ -67,9 +67,11 @@ updateProgress();
 window.addEventListener('scroll', updateProgress, { passive: true });
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const growthFields = document.querySelectorAll('[data-growth-field]');
 if (reducedMotion || !('IntersectionObserver' in window)) {
   document.querySelectorAll('[data-reveal]').forEach((item) => item.classList.add('is-visible'));
   document.querySelectorAll('[data-tangle]').forEach((item) => item.classList.add('is-active'));
+  growthFields.forEach((item) => item.classList.add('is-growth-active'));
 } else {
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -85,6 +87,16 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
     entries.forEach((entry) => entry.target.classList.toggle('is-active', entry.isIntersecting));
   }, { threshold: .35 });
   document.querySelectorAll('[data-tangle]').forEach((item) => tangleObserver.observe(item));
+
+  const growthObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-growth-active');
+        growthObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .15 });
+  growthFields.forEach((item) => growthObserver.observe(item));
 }
 
 document.querySelectorAll('[data-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });

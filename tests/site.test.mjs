@@ -57,6 +57,18 @@ test('preview protections and safe form behaviour remain explicit', async () => 
   assert.match(robots, /^Disallow:\s*\/$/m);
 });
 
+test('the hero growth line waits until its artwork enters the viewport', async () => {
+  const index = await readFile(path.join(src, 'index.html'), 'utf8');
+  const app = await readFile(path.join(src, 'app.js'), 'utf8');
+  const styles = await readFile(path.join(src, 'styles.css'), 'utf8');
+
+  assert.match(index, /<svg[^>]*data-growth-field/);
+  assert.match(app, /querySelectorAll\('\[data-growth-field\]'\)/);
+  assert.match(app, /classList\.add\('is-growth-active'\)/);
+  assert.match(styles, /\.has-js \.growth-line\s*\{[^}]*stroke-dashoffset:\s*1/);
+  assert.match(styles, /\.has-js \.growth-field\.is-growth-active \.growth-line\s*\{[^}]*animation:\s*draw-line/);
+});
+
 test('hosting config applies the required security headers', async () => {
   const config = JSON.parse(await readFile(path.join(projectRoot, 'firebase.json'), 'utf8'));
   const globalHeaders = config.hosting.headers.find(({ source }) => source === '**').headers;

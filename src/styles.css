@@ -112,7 +112,9 @@
   .hero-art { position: relative; min-height: 38rem; align-self: center; }
   .growth-field { position: absolute; inset: -6rem -7rem auto -8rem; width: calc(100% + 15rem); height: auto; opacity: .9; }
   .contours path { stroke: color-mix(in oklab, var(--violet) 23%, transparent); stroke-width: 1; }
-  .growth-line { stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-line 2.4s .35s var(--ease) forwards; }
+  .growth-line { stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .has-js .growth-line { stroke-dashoffset: 1; }
+  .has-js .growth-field.is-growth-active .growth-line { animation: draw-line 2.4s .15s var(--ease) forwards; }
   .growth-labels { fill: var(--muted-dark); font: 600 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; }
   .logo-frame { position: absolute; z-index: 2; right: 0; bottom: 1.5rem; width: min(34rem, 92%); padding: .55rem; background: #0d1113; border: 1px solid color-mix(in oklab, var(--violet) 48%, transparent); box-shadow: 0 2rem 5rem rgba(0,0,0,.4); transform: rotate(1.7deg); }
   .logo-frame img { width: 100%; height: auto; }
@@ -394,7 +396,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    .growth-line, .tangle-main { stroke-dashoffset: 0; }
+    .has-js .growth-line, .growth-line, .tangle-main { stroke-dashoffset: 0; }
     .has-js [data-reveal] { opacity: 1; transform: none; }
   }
 
