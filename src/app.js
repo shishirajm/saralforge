@@ -95,7 +95,7 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
         growthObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: .15 });
+  }, { threshold: .4 });
   growthFields.forEach((item) => growthObserver.observe(item));
 }
 
