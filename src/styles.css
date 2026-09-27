@@ -382,6 +382,16 @@
     .prose { padding-right: var(--gutter); }
   }
 
+  @media (max-width: 22rem) {
+    .hero-copy { min-width: 0; }
+    .eyebrow { align-items: flex-start; flex-direction: column; gap: .35rem; }
+    .hero h1 { max-width: 100%; font-size: clamp(2.5rem, 13vw, 2.85rem); text-wrap: wrap; }
+    .experience-proof { grid-template-columns: 1fr; gap: .7rem; }
+    .experience-proof > * { min-width: 0; }
+    .experience-proof strong { font-size: 2.75rem; }
+    .experience-proof p { font-size: .8rem; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .growth-line, .tangle-main { stroke-dashoffset: 0; }

@@ -89,8 +89,32 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
 
 document.querySelectorAll('[data-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });
 
+const CONTACT_EMAIL = 'forgesaral@gmail.com';
 const projectForm = document.querySelector('[data-project-form]');
-function reviewProjectBrief(event) {
+
+function buildBriefMailto({ name, email, business, summary }) {
+  const subject = `Project brief from ${name}`;
+  const bodyLines = [
+    summary,
+    '',
+    `Business or team: ${business || 'Not provided'}`,
+    `Reply-to email: ${email}`
+  ];
+  const params = new URLSearchParams({ subject, body: bodyLines.join('\n') });
+  return `mailto:${CONTACT_EMAIL}?${params.toString().replace(/\+/g, '%20')}`;
+}
+
+function showFormErrors(errors) {
+  ['name', 'email', 'summary'].forEach((fieldName) => {
+    const field = projectForm.elements[fieldName];
+    const error = document.getElementById(`${fieldName}-error`);
+    const message = errors[fieldName] || '';
+    field?.setAttribute('aria-invalid', String(Boolean(message)));
+    if (error) error.textContent = message;
+  });
+}
+
+function submitProjectBrief(event) {
   event.preventDefault();
 
   const name = projectForm.elements.name;
@@ -98,6 +122,13 @@ function reviewProjectBrief(event) {
   const summary = projectForm.elements.summary;
   const website = projectForm.elements.website;
   const status = projectForm.querySelector('[data-form-status]');
+
+  if (website.value) {
+    status.classList.add('is-success');
+    status.textContent = `Opening your email app, addressed to ${CONTACT_EMAIL}. Send it from there to reach us.`;
+    return;
+  }
+
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const errors = {
     name: name.value.trim() ? '' : 'Add your name.',
@@ -105,17 +136,7 @@ function reviewProjectBrief(event) {
     summary: summary.value.trim().length >= 24 ? '' : 'Add a little more detail (at least 24 characters).'
   };
 
-  Object.entries(errors).forEach(([fieldName, message]) => {
-    const field = projectForm.elements[fieldName];
-    const error = document.getElementById(`${fieldName}-error`);
-    field.setAttribute('aria-invalid', String(Boolean(message)));
-    if (error) error.textContent = message;
-  });
-
-  if (website.value) {
-    status.textContent = 'Thanks. Your brief has been reviewed locally.';
-    return;
-  }
+  showFormErrors(errors);
 
   const firstInvalid = Object.keys(errors).find((fieldName) => errors[fieldName]);
   if (firstInvalid) {
@@ -125,12 +146,18 @@ function reviewProjectBrief(event) {
     return;
   }
 
+  window.location.href = buildBriefMailto({
+    name: name.value.trim(),
+    email: email.value.trim(),
+    business: projectForm.elements.business.value.trim(),
+    summary: summary.value.trim()
+  });
   status.classList.add('is-success');
-  status.textContent = 'Your brief is ready. This preview has not sent or stored it.';
+  status.textContent = `Opening your email app, addressed to ${CONTACT_EMAIL}. Send it from there to reach us.`;
 }
 
 if (projectForm) {
-  projectForm.addEventListener('submit', reviewProjectBrief);
+  projectForm.addEventListener('submit', submitProjectBrief);
   projectForm.querySelectorAll('input, textarea, button').forEach((control) => { control.disabled = false; });
   document.querySelector('[data-js-required-hint]')?.remove();
 }

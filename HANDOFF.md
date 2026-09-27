@@ -11,13 +11,13 @@ The user asked to deploy this site and confirmed that the owned domain is `saral
 - The domain registration and public Cloud DNS zone currently remain in `trellis-app-504909`. That project also contains Trellis-labelled Terraform state, so it was not repurposed or renamed during this release.
 - Production URL metadata now uses `https://saralforge.com` rather than the superseded `sarallabs.com` value.
 - Deployment source and checks are defined in `package.json`, `firebase.json`, `.firebaserc`, `scripts/`, `tests/`, `docs/url-inventory.csv`, `docs/publishing-approvals.json`, and `docs/plans/2026-09-26-gcp-firebase-deployment.md`.
-- The project has no Git repository. `dist/` is disposable output from `npm run build`.
+- The project is a Git repository with `origin` at `git@github.com:shishirajm/saralforge.git`. `dist/` is disposable output from `npm run build`.
 
 The primary audience and offer, final claims/copy, Sydney/Australia identity and intended contact address are now recorded as approved. ABN publication is deferred. Before connecting the custom domain, approve the enquiry retention period and implement and test the chosen contact delivery path. Then remove the preview crawl blocks, run `npm run check:production`, deploy the live channel, connect the apex in Firebase Hosting, and configure `www` as a redirect to the apex.
 
-Use `npm run deploy:preview` and `npm run deploy:production`; do not use a bare `firebase deploy`. `.firebaserc` deliberately has no default project so an accidental deploy without an explicit target fails. A CI-enforced production gate still depends on creating a Git repository and deployment workflow.
+Use `npm run deploy:preview` and `npm run deploy:production`; do not use a bare `firebase deploy`. `.firebaserc` deliberately has no default project so an accidental deploy without an explicit target fails. A CI-enforced production gate still depends on adding an approved deployment workflow.
 
-Updated: 20 September 2026 (Australia/Sydney)
+Updated: 26 September 2026 (Australia/Sydney)
 
 ## User objective
 

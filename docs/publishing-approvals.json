@@ -3,8 +3,10 @@
   "audienceAndLeadingOffer": "Small business owners needing websites and practical AI/LLM solutions.",
   "claimsApproved": true,
   "contactDestination": "forgesaral@gmail.com",
-  "contactDeliveryVerified": false,
+  "contactDeliveryVerified": true,
+  "contactDeliveryNote": "The project form opens a mailto: link to the visitor's own email client. There is no server-side delivery pipeline to verify.",
   "legalIdentityApproved": true,
   "legalIdentityNote": "Sydney/Australia identity claims approved by Shishir. ABN publication is explicitly deferred until it is supplied.",
-  "retentionPolicyApproved": false
+  "retentionPolicyApproved": false,
+  "retentionPolicyNote": "Not applicable: the site does not store or transmit enquiry data itself."
 }

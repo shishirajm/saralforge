@@ -49,9 +49,11 @@ test('preview protections and safe form behaviour remain explicit', async () => 
     const html = await readFile(path.join(src, file), 'utf8');
     assert.match(html, /noindex, nofollow/, `${file} must remain non-indexed in preview`);
   }
-  assert.match(start, /does not transmit or store your details/);
+  assert.match(start, /needs JavaScript to enable/);
   assert.match(start, /type="submit" disabled/);
-  assert.match(app, /has not sent or stored it/);
+  assert.match(app, /mailto:\$\{CONTACT_EMAIL\}/);
+  assert.match(app, /if \(website\.value\)/);
+  assert.match(app, /querySelectorAll\('input, textarea, button'\).*disabled = false/);
   assert.match(robots, /^Disallow:\s*\/$/m);
 });
 
