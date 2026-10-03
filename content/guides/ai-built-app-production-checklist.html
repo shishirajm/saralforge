@@ -1,0 +1,57 @@
+<p>AI coding tools can produce a working app quickly. That is useful for testing an idea. But an app that works in a demonstration is a prototype, and a prototype is not the same as software a business can rely on. This guide explains the gap, and what you can check yourself.</p>
+
+<h2>Prototype versus operational software</h2>
+<p>A prototype shows that something could work. Operational software has to keep working when people make mistakes, when someone tries something unexpected, when a service it relies on changes, and when something goes wrong at 5 pm on a Friday. The difference is mostly in things you cannot see on screen: who can access what, where passwords and keys are kept, how bad input is handled, and how you recover from a mistake.</p>
+<p>Nothing here is a reason to avoid AI tools. It is a reason to check before real customer data goes in.</p>
+
+<h2>Checks you can do yourself</h2>
+<p>You do not need to read code to do these.</p>
+<ul class="checklist">
+  <li><strong>Try to break the login.</strong> Visit pages while logged out. Do they still show information?</li>
+  <li><strong>Test with two accounts.</strong> Create two test users. Can one see or change the other's records?</li>
+  <li><strong>Ask where the keys are.</strong> Ask the tool or builder where passwords, API keys and other secrets are stored. They should not appear in the code that runs in a visitor's browser or in a public repository.</li>
+  <li><strong>Check who owns the accounts.</strong> Hosting, domain, database and the AI tool account should be in your business's name, with access recorded.</li>
+  <li><strong>Ask what is stored.</strong> What personal information does the app collect? Do you need all of it?</li>
+  <li><strong>Check backups.</strong> Is there a backup? Has anyone tested restoring it?</li>
+  <li><strong>Try bad input.</strong> Enter very long text, empty fields, odd symbols. Does the app cope, or does it break?</li>
+  <li><strong>Read the tool's terms.</strong> Where does your data go when you use the AI tool, and how is it used?</li>
+  <li><strong>Ask what happens when it breaks.</strong> Who will you call, and can they fix it?</li>
+</ul>
+
+<h2>Checks that need a specialist</h2>
+<p>These are hard to judge without technical experience. They are where an experienced review earns its keep.</p>
+<ul class="checklist">
+  <li><strong>Authentication and permissions.</strong> That access is enforced by the server, and not just by hiding buttons on a page.</li>
+  <li><strong>Input handling.</strong> That user input cannot be used to read or change data it should not, or to run unwanted code.</li>
+  <li><strong>Secret management.</strong> That keys are stored safely, can be replaced, and were not exposed during development.</li>
+  <li><strong>Dependencies.</strong> That the libraries the app relies on are current and from sources you trust.</li>
+  <li><strong>Logging and monitoring.</strong> That you would know if something failed or someone misused the app.</li>
+  <li><strong>Backup and restore.</strong> That a restore has actually been tested, not just that backups exist.</li>
+  <li><strong>Abuse protection.</strong> That repeated requests or automated attempts are limited.</li>
+  <li><strong>Tests.</strong> That the important behaviour is checked automatically, so a change does not quietly break it.</li>
+  <li><strong>Privacy and data handling.</strong> That the way you collect, store and share data is appropriate for your business.</li>
+  <li><strong>Deployment and recovery.</strong> That you can release a fix and roll one back.</li>
+</ul>
+<p>The OWASP Top 10 is a widely used awareness list of common web application security risks, and its current edition is 2025. It is a good reference for the kinds of problems a reviewer looks for. It is a starting point, not a checklist that proves an app is safe.</p>
+
+<h2>What an experienced review adds</h2>
+<p>A review does not mean rewriting everything. A reviewer reads what exists, tries to misuse it, lists the risks in order of importance and tells you what to fix before launch, what can wait and what to leave alone. The aim is to turn "it seems to work" into "we know what it does and where it could fail". It cannot promise perfect security, because nobody can. It can lower the chance of a preventable mistake.</p>
+
+<aside class="example">
+  <p class="example-label">Hypothetical example</p>
+  <p>A fictional tutoring business builds a student-progress tracker with an AI tool. It looks complete. Testing with two accounts, the owner finds that changing a number in the web address shows another student's page. That is a permissions problem, and it is exactly the sort of fault a demonstration never shows. Fixing it properly needs someone who understands how access is checked on the server.</p>
+</aside>
+
+<h2>A simple rule of thumb</h2>
+<table>
+  <caption>How much checking an app needs</caption>
+  <thead><tr><th scope="col">What the app does</th><th scope="col">Suggested approach</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Only you use it, with no customer data</th><td>Owner checks are probably enough. Keep backups.</td></tr>
+    <tr><th scope="row">Staff use it with business data</th><td>Owner checks, then a focused specialist review.</td></tr>
+    <tr><th scope="row">Customers log in, or personal or payment data is involved</th><td>A specialist review before launch, and a plan for upkeep.</td></tr>
+  </tbody>
+</table>
+
+<h2>Ask for a review before real data goes in</h2>
+<p>Ask for a review before the first real customer record goes in, not after. If you are deciding whether to keep building with AI tools or hand the work over, <a href="/guides/when-to-involve-a-developer.html">when to involve a developer</a> explains the options. Before you go further, <a href="/guides/scope-small-business-app.html">scoping the first version</a> keeps the app small enough to check properly. After launch, <a href="/guides/small-business-app-maintenance.html">what happens after an app launches</a> covers upkeep.</p>

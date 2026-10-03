@@ -1,0 +1,75 @@
+<p>Typing the same customer details into your enquiry inbox, your calendar and your accounting software is not just slow. Each copy is a chance for a typo, and over time the copies stop agreeing. The fix is rarely "connect everything". It is to decide where each fact lives and move it one way.</p>
+
+<h2>Step one: map where information starts</h2>
+<p>Before choosing any tool, write down what actually happens to a piece of information, such as a new enquiry.</p>
+<ol class="steps">
+  <li>List every place the information is typed or pasted, in order.</li>
+  <li>Note who does it and how often it happens.</li>
+  <li>Note which copies are used for decisions, and which are just kept "in case".</li>
+  <li>Mark the first place the information appears. This is where it starts.</li>
+</ol>
+<p>This map often shows that two of the five places could simply be dropped.</p>
+
+<h2>Step two: choose the authoritative record</h2>
+<p>The authoritative record is the one place you trust if two copies disagree. Every important fact should have exactly one. Other systems may read it, but should not edit it.</p>
+<table>
+  <caption>An example of deciding where each fact lives</caption>
+  <thead><tr><th scope="col">Fact</th><th scope="col">Lives in</th><th scope="col">Other systems</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Customer contact details</th><td>Customer list</td><td>Read a copy when needed</td></tr>
+    <tr><th scope="row">Job date and status</th><td>Job tracker</td><td>Calendar shows it, does not change it</td></tr>
+    <tr><th scope="row">Quote amount</th><td>Quoting tool</td><td>Accounting receives it once approved</td></tr>
+  </tbody>
+</table>
+
+<h2>Ways to move the information</h2>
+<table>
+  <caption>Options, from lightest to heaviest</caption>
+  <thead><tr><th scope="col">Option</th><th scope="col">Fits when</th><th scope="col">Watch for</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Scheduled import or export</th><td>A daily or weekly update is fast enough, and both tools can import and export files.</td><td>Someone must remember to run it, unless it is scheduled. Check how it handles records that already exist.</td></tr>
+    <tr><th scope="row">A built-in connection</th><td>Both products offer an official integration for your case.</td><td>Read exactly which fields move and in which direction.</td></tr>
+    <tr><th scope="row">A no-code connector service</th><td>The steps are simple and the volume is modest.</td><td>Ongoing fees, what the service can see, and what happens when a step fails.</td></tr>
+    <tr><th scope="row">A custom integration</th><td>You need reliability, special rules, or the products do not connect.</td><td>It needs testing, monitoring and someone to look after it.</td></tr>
+  </tbody>
+</table>
+
+<h2>When a simple import is enough</h2>
+<ul class="checklist">
+  <li>The information changes slowly, for example once a day or less.</li>
+  <li>Nobody is harmed if the copy is a few hours behind.</li>
+  <li>One person can check the result in a few minutes.</li>
+  <li>Both systems can export or import a file with the fields you need.</li>
+</ul>
+<p>If most of these are true, a scheduled import is often better than a live integration because it is easier to understand and to fix.</p>
+
+<h2>A system-connection checklist</h2>
+<p>Before connecting two systems, find out:</p>
+<ul class="checklist">
+  <li>Does each product offer a supported way to read and write data, or only to export?</li>
+  <li>Who holds the admin access needed to set it up, and where will the access keys be stored safely?</li>
+  <li>What identifies a record uniquely, such as an email address or an ID, so that duplicates can be detected?</li>
+  <li>What happens when one system is unavailable? Will the update be retried or lost?</li>
+  <li>Who is told when something fails, and how?</li>
+  <li>What are the exceptions: cancelled jobs, changed details, customers with two addresses?</li>
+  <li>Can you test with a copy of real, messy data rather than clean examples?</li>
+  <li>How would you undo a wrong update?</li>
+</ul>
+
+<h2>An illustrative enquiry-to-job flow</h2>
+<aside class="example">
+  <p class="example-label">Hypothetical example</p>
+  <p>This is an invented flow for a fictional small plumbing business. It is not a client result.</p>
+</aside>
+<ol class="steps">
+  <li>An enquiry arrives through the website form and is added to one shared list, the authoritative record.</li>
+  <li><strong>A person</strong> reviews it, checks it is in the service area and marks it Quoting or Declined.</li>
+  <li>When marked Quoting, a quote record is created once, using the customer's details from the list.</li>
+  <li>When the customer approves, the job appears in the schedule. The calendar reads it and does not own it.</li>
+  <li>When the job is complete, the invoice details move to accounting once.</li>
+  <li><strong>If a step fails</strong>, for example the schedule cannot be updated, the person responsible is told and the record stays flagged until it is fixed.</li>
+</ol>
+<p>The important decisions are the single list, the one-way movement and what happens on failure. The tool you pick matters less.</p>
+
+<h2>When the connection is no longer a DIY job</h2>
+<p>Ask for help when records must stay in step in real time, when a mistake costs money, or when your systems offer no official way to connect. Help is also worth it when the "map" step reveals that the real problem is a confused process rather than a missing connection. See <a href="/guides/what-to-automate-first.html">what to automate first</a> before connecting everything. If a spreadsheet sits at the centre of the mess, <a href="/guides/spreadsheet-or-small-business-app.html">when a spreadsheet is no longer enough</a> may help. If you decide a small app is the answer, <a href="/guides/scope-small-business-app.html">scope the first version</a> before anyone builds it.</p>

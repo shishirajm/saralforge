@@ -1,0 +1,79 @@
+<p>AI is a useful tool for some tasks and the wrong tool for many. Ordinary automation, which follows fixed rules you write down, is more predictable and often cheaper to run. And sometimes the right answer is a simpler process with no technology added. This guide helps you tell which is which.</p>
+
+<h2>Three different things</h2>
+<ul>
+  <li><strong>A simpler process.</strong> Removing a step, agreeing a standard way of doing something, or using a template. It needs no software.</li>
+  <li><strong>Ordinary automation.</strong> Software that follows rules you define, such as "when a form is submitted, add a row and send a confirmation". The same input always gives the same result.</li>
+  <li><strong>AI.</strong> Here, usually a language model that reads or writes free-form text. It can handle variety, such as messy emails, but its output can differ each time and can be wrong.</li>
+</ul>
+
+<h2>A decision tree</h2>
+<p>Start at the first question and follow your answer.</p>
+<ol class="decision">
+  <li><strong>Question 1: Can you write the steps down, and do the people involved agree on them?</strong>
+    <ul>
+      <li>No: <strong>do not automate yet.</strong> Clarify and simplify the process first.</li>
+      <li>Yes: go to question 2.</li>
+    </ul>
+  </li>
+  <li><strong>Question 2: Are the inputs structured and the rules fixed?</strong> For example, form fields, dates, amounts, or a status that changes.
+    <ul>
+      <li>Yes: <strong>use ordinary automation.</strong> It is predictable and easy to test.</li>
+      <li>No, the inputs are free-form language or images: go to question 3.</li>
+    </ul>
+  </li>
+  <li><strong>Question 3: Would a mistake be costly or hard to undo?</strong>
+    <ul>
+      <li>Yes: <strong>let AI suggest and a person decide.</strong> Do not let it act alone.</li>
+      <li>No: AI may act on its own for low-stakes tasks, with sampling checks.</li>
+    </ul>
+  </li>
+  <li><strong>Question 4: Can you test it on real examples and measure whether it works?</strong>
+    <ul>
+      <li>No: wait until you can. An AI feature you cannot evaluate is a risk.</li>
+      <li>Yes: try it on a small scale, check the results, then widen.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2>Examples for each option</h2>
+<table>
+  <caption>Illustrative tasks and what usually fits</caption>
+  <thead><tr><th scope="col">Task</th><th scope="col">Usually fits</th><th scope="col">Why</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Send a reminder the day before a booking</th><td>Ordinary automation</td><td>Fixed rule, structured data.</td></tr>
+    <tr><th scope="row">Copy a form's details into a customer list</th><td>Ordinary automation</td><td>Fields map directly.</td></tr>
+    <tr><th scope="row">Summarise a long, messy email thread</th><td>AI, with a person reading the summary</td><td>Free-form language. A person can spot errors quickly.</td></tr>
+    <tr><th scope="row">Draft a first reply to a common question</th><td>AI drafts, a person approves</td><td>Wording varies, but the reply goes out under your name.</td></tr>
+    <tr><th scope="row">Decide whether to accept a complex job</th><td>A person</td><td>Needs judgement, and the cost of error is high.</td></tr>
+    <tr><th scope="row">Two staff handle the same task differently</th><td>A simpler process first</td><td>Agree one way, then decide whether to automate.</td></tr>
+  </tbody>
+</table>
+
+<h2>Questions to ask about any AI feature</h2>
+<ul class="checklist">
+  <li><strong>Reliability.</strong> What does it do when it is unsure or wrong? Who notices?</li>
+  <li><strong>Human review.</strong> Which outputs are checked by a person before they matter?</li>
+  <li><strong>Privacy.</strong> What information is sent to the AI service, where is it processed and stored, and is it appropriate to send?</li>
+  <li><strong>Evaluation.</strong> Have you tried it on real examples, including difficult ones, and kept the results?</li>
+  <li><strong>Cost.</strong> What are the ongoing usage charges, and who maintains it as the tool changes?</li>
+  <li><strong>Fallback.</strong> What happens when the service is unavailable?</li>
+</ul>
+<p>One common safe pattern is that the AI proposes and ordinary rules decide. For example, it might read an email and suggest a category, but fixed rules and a person control what happens next. On its Services page, Saral Forge describes its AI work as the model proposing and deterministic code deciding.</p>
+<p>AI is not required, and it does not guarantee savings. Its running costs and review effort count against any time it saves.</p>
+
+<aside class="example">
+  <p class="example-label">Hypothetical example</p>
+  <p>A fictional small accounting firm receives client emails with questions of every kind. Reminders to send documents follow a fixed rule, so they use ordinary automation. For incoming questions, an AI tool suggests which staff member should handle each one, and a person confirms. They try it for a month on a copy of real emails first and note how often the suggestion was wrong.</p>
+</aside>
+
+<h2>Try it safely first</h2>
+<ul class="checklist">
+  <li>Write down the task as numbered steps and check whether people agree.</li>
+  <li>Look for built-in automation in the tools you already use.</li>
+  <li>If you try an AI tool, use made-up or non-sensitive examples at first.</li>
+  <li>Keep a note of every mistake it makes.</li>
+</ul>
+
+<h2>When AI touches customer information</h2>
+<p>Ask for help when you want AI to touch customer information, when its output affects money or decisions, or when you need to evaluate whether it is good enough. An experienced person can help set it up so that a mistake is caught and can be reversed. Start with <a href="/guides/what-to-automate-first.html">what to automate first</a> if you have not yet picked a task. The <a href="/guides/enquiry-to-booking-workflow.html">enquiry workflow</a> shows where people and tools fit together, and the <a href="/guides/ai-built-app-production-checklist.html">readiness checklist</a> is worth reading before anything built with AI tools goes live.</p>

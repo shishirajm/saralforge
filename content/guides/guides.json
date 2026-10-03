@@ -1,0 +1,244 @@
+{
+  "groups": [
+    { "id": "website", "title": "Make your website work harder", "intro": "Visitors, enquiries and being found: what to check before you pay for a redesign." },
+    { "id": "admin", "title": "Reduce manual admin", "intro": "Spreadsheets, double entry and hand-offs: where the hours go and what to fix first." },
+    { "id": "app", "title": "Plan a small app", "intro": "From \"could we have an app?\" to a first version small enough to finish and safe enough to use." },
+    { "id": "help", "title": "Choose the right help", "intro": "Who to ask, what affects the cost, how to brief them, and what you should own at the end." }
+  ],
+  "services": {
+    "websites": { "label": "Websites that work", "href": "/services.html#websites", "blurb": "Fast, focused websites built around the action your customer needs to take." },
+    "booking": { "label": "Booking and scheduling", "href": "/services.html#booking", "blurb": "Clear journeys from first enquiry to confirmed work, with fewer manual handoffs." },
+    "automation": { "label": "AI and workflow automation", "href": "/services.html#automation", "blurb": "Practical automation with guardrails: the model proposes, deterministic code decides." },
+    "apps": { "label": "Custom web and mobile apps", "href": "/services.html#apps", "blurb": "Purpose-built portals, dashboards and mobile tools for workflows that do not fit a template." },
+    "cloud": { "label": "Cloud and cost clarity", "href": "/services.html#cloud", "blurb": "Infrastructure that is easier to understand, operate and account for." }
+  },
+  "guides": [
+    {
+      "slug": "website-visitors-no-enquiries", "group": "website", "service": "websites", "status": "published",
+      "title": "My website gets visitors but no enquiries: what should I check?",
+      "metaTitle": "Website visitors but no enquiries: what to check",
+      "description": "A step-by-step self-audit that separates a traffic problem from a conversion problem, so you know what to fix before paying for a redesign.",
+      "excerpt": "A self-audit that separates \"not enough of the right visitors\" from \"visitors who cannot easily act\".",
+      "answer": "Check in order: are the right people arriving, do they understand your offer quickly, is there believable proof, and is contacting you easy and actually working? The cause is often in the last three, not in traffic, so a redesign is rarely the first fix.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["better-business-enquiry-form", "small-business-website-checklist", "website-app-project-brief"],
+      "sources": [{ "title": "W3C Web Accessibility Initiative: Forms tutorial", "url": "https://www.w3.org/WAI/tutorials/forms/", "reviewed": "2026-10-03" }]
+    },
+    {
+      "slug": "website-builder-or-custom-website", "group": "website", "service": "websites", "status": "published",
+      "title": "Website builder or custom website: which fits your business?",
+      "metaTitle": "Website builder or custom website: which fits?",
+      "description": "When a website builder is enough, when your requirements justify custom work, and the questions about ownership and upkeep that decide it.",
+      "excerpt": "A decision table for choosing between a hosted builder and custom work, based on what the site must actually do.",
+      "answer": "If you need a brochure-style site that you can edit yourself, a website builder is usually the sensible choice. Custom work earns its cost when the site must do something a builder cannot do well, such as connect to your systems or follow rules specific to your business.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["small-business-website-checklist", "small-website-app-cost-factors", "website-app-ownership-handover"],
+      "sources": []
+    },
+    {
+      "slug": "small-business-website-checklist", "group": "website", "service": "websites", "status": "published",
+      "title": "What should a small business website include?",
+      "metaTitle": "What a small business website needs: a checklist",
+      "description": "A must-have versus later checklist for a small business website, built around the decisions your visitors make rather than a page count.",
+      "excerpt": "A must-have versus later checklist, organised around what a visitor needs in order to decide.",
+      "answer": "A small business website needs to say what you do and for whom, show enough proof to be believed, make contact easy, and work on a phone. Everything else can come later.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["website-visitors-no-enquiries", "business-website-not-showing-on-google", "website-builder-or-custom-website"],
+      "sources": [{ "title": "Google Search Central: SEO Starter Guide", "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", "reviewed": "2026-10-03" }]
+    },
+    {
+      "slug": "business-website-not-showing-on-google", "group": "website", "service": "websites", "status": "published",
+      "title": "Why is my business website not showing up on Google?",
+      "metaTitle": "Why your business website is not showing on Google",
+      "description": "Separate indexing from ranking, rule out accidental blocks such as noindex, and follow a diagnosis sequence for a new site and for an established one.",
+      "excerpt": "Work out whether Google has found your site, indexed it, or simply does not rank it yet, and what to do in each case.",
+      "answer": "First find out which problem you have. If your pages are not in Google's index, look for blocks such as noindex or robots.txt. If they are indexed but not showing for the searches you care about, that is a ranking question, and no setting guarantees a position.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["small-business-website-checklist", "website-visitors-no-enquiries", "website-builder-or-custom-website"],
+      "sources": [
+        { "title": "Google Search Central: SEO Starter Guide", "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide", "reviewed": "2026-10-03" },
+        { "title": "Google Search Central: Block Search indexing with noindex", "url": "https://developers.google.com/search/docs/crawling-indexing/block-indexing", "reviewed": "2026-10-03" },
+        { "title": "Google Search Central: Sitemaps overview", "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview", "reviewed": "2026-10-03" },
+        { "title": "Google Search Central: Consolidate duplicate URLs (canonicalisation)", "url": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls", "reviewed": "2026-10-03" },
+        { "title": "Search Console Help: Page indexing report", "url": "https://support.google.com/webmasters/answer/7440203", "reviewed": "2026-10-03" },
+        { "title": "Google Search Central: Creating helpful, reliable, people-first content", "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", "reviewed": "2026-10-03" }
+      ]
+    },
+    {
+      "slug": "better-business-enquiry-form", "group": "website", "service": "websites", "status": "published",
+      "title": "A better enquiry form: ask enough without making it hard",
+      "metaTitle": "A better business enquiry form: ask enough, not more",
+      "description": "Which fields an enquiry form needs, how to make it work on a phone, and how to test that messages really arrive and confirmations tell the truth.",
+      "excerpt": "Which fields to ask for, how to test delivery, and why a form that opens an email app is not the same as one that sends.",
+      "answer": "Ask only for what you need to reply well: a name, a way to reach them, and what they want. Then test the whole path, because a form that looks fine but loses messages is worse than no form.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["website-app-project-brief", "website-visitors-no-enquiries", "enquiry-to-booking-workflow"],
+      "sources": [{ "title": "W3C Web Accessibility Initiative: Forms tutorial", "url": "https://www.w3.org/WAI/tutorials/forms/", "reviewed": "2026-10-03" }]
+    },
+    {
+      "slug": "spreadsheet-or-small-business-app", "group": "admin", "service": "apps", "status": "published",
+      "title": "When has your business outgrown its spreadsheet?",
+      "metaTitle": "When has your business outgrown its spreadsheet?",
+      "description": "Signs a spreadsheet is no longer coping, and a decision checklist for improving it, using existing software, or building a small custom app.",
+      "excerpt": "A checklist for deciding between a tidier spreadsheet, existing software and a small custom app.",
+      "answer": "A spreadsheet has outgrown its job when people overwrite each other's work, the same data lives in several versions, or you cannot answer simple questions without a manual hunt. Try fixing the spreadsheet and checking existing software before you consider custom work.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["reduce-duplicate-data-entry", "scope-small-business-app", "app-website-or-existing-tool"],
+      "sources": []
+    },
+    {
+      "slug": "reduce-duplicate-data-entry", "group": "admin", "service": "automation", "status": "published",
+      "title": "Stop entering the same information into different systems",
+      "metaTitle": "Stop entering the same information twice",
+      "description": "How to find where data starts, choose one authoritative record, and decide between a simple import, a no-code connector and a custom integration.",
+      "excerpt": "Map where information starts, pick one source of truth, and choose the lightest way to move it.",
+      "answer": "Decide which system holds the true record, then move data one way from there. Often a scheduled import or export is enough; a live integration is worth building only when delays or mistakes are costly.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["scope-small-business-app", "what-to-automate-first", "spreadsheet-or-small-business-app"],
+      "sources": []
+    },
+    {
+      "slug": "enquiry-to-booking-workflow", "group": "admin", "service": "booking", "status": "published",
+      "title": "From enquiry to booking: fix the handoffs that lose work",
+      "metaTitle": "From enquiry to booking: fix the handoffs",
+      "description": "Walk through each handoff between an enquiry and a confirmed booking, who is responsible at each step, and where work usually goes missing.",
+      "excerpt": "An illustrative enquiry-to-booking workflow showing who does what and what happens when something goes wrong.",
+      "answer": "Write down every step between an enquiry and a confirmed booking, name who owns each one, and decide what happens when a step fails. Work is often lost at the handoffs, not inside the steps.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["better-business-enquiry-form", "what-to-automate-first", "customer-portal-or-email"],
+      "sources": []
+    },
+    {
+      "slug": "what-to-automate-first", "group": "admin", "service": "automation", "status": "published",
+      "title": "What should you automate first in a small business?",
+      "metaTitle": "What to automate first in a small business",
+      "description": "Score your repetitive tasks on frequency, effort, error rate, stable rules and reversibility to find the first one worth automating.",
+      "excerpt": "A simple scoring worksheet for picking the first task worth automating, and the ones to leave alone.",
+      "answer": "Automate a task that happens often, follows rules that rarely change, costs real time or causes mistakes, and can be undone if it goes wrong. Fix a confused process before you automate it, or you will only repeat the confusion faster.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["ai-or-workflow-automation", "enquiry-to-booking-workflow", "reduce-duplicate-data-entry"],
+      "sources": []
+    },
+    {
+      "slug": "ai-or-workflow-automation", "group": "admin", "service": "automation", "status": "published",
+      "title": "Do you need AI, ordinary automation, or a simpler process?",
+      "metaTitle": "AI, ordinary automation or a simpler process?",
+      "description": "A decision tree for choosing between a simpler process, rule-based automation and AI, covering reliability, human review, privacy and ongoing cost.",
+      "excerpt": "A decision tree that starts with \"do not automate yet\" and only reaches for AI when the task needs it.",
+      "answer": "If the rules are clear and stable, use ordinary automation. If the task involves variable language, such as reading messy emails, AI may help, with a person checking the output. If the process itself is unclear, simplify it first.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["enquiry-to-booking-workflow", "what-to-automate-first", "ai-built-app-production-checklist"],
+      "sources": []
+    },
+    {
+      "slug": "app-website-or-existing-tool", "group": "app", "service": "apps", "status": "published",
+      "title": "Do you need an app, a website, or an existing tool?",
+      "metaTitle": "App, website or existing tool: which do you need?",
+      "description": "A plain-language decision tree for choosing between a website, a web app, a native mobile app and software you can already buy.",
+      "excerpt": "A decision tree, plus a plain explanation of the difference between a web app and a native mobile app.",
+      "answer": "If people only need to read or contact you, you need a website. If they need to log in and do things, you may need a web app. Check whether software you can already buy covers most of it before building anything.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["ai-built-app-production-checklist", "scope-small-business-app", "spreadsheet-or-small-business-app"],
+      "sources": []
+    },
+    {
+      "slug": "scope-small-business-app", "group": "app", "service": "apps", "status": "published",
+      "title": "How to scope the first version of a small business app",
+      "metaTitle": "How to scope the first version of a small app",
+      "description": "Choose one user group and one job, list the essential steps and exceptions, and defer the rest, with a worked example and a copyable template.",
+      "excerpt": "A worked one-page scope and a blank template for deciding what the first version should and should not do.",
+      "answer": "Pick one group of users and one job they need done, write the steps and the exceptions, and say what you will leave out for now. The first version should be small enough to finish and learn from.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["website-app-project-brief", "ai-built-app-production-checklist", "small-website-app-cost-factors"],
+      "sources": []
+    },
+    {
+      "slug": "ai-built-app-production-checklist", "group": "app", "service": "apps", "status": "published",
+      "title": "Can an AI-built app be used safely in a real business?",
+      "metaTitle": "Can an AI-built app be used safely in a business?",
+      "description": "A readiness checklist separating the checks you can do yourself from those that need a specialist, for an app built with AI coding tools.",
+      "excerpt": "A readiness checklist that separates what an owner can check from what needs a specialist.",
+      "answer": "Sometimes, with checks. An app that works in a demo is a prototype. Before real customer data goes in, someone needs to verify who can see what, where secrets are kept, how input is validated, and how you would recover from a mistake.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["small-business-app-maintenance", "when-to-involve-a-developer", "scope-small-business-app"],
+      "sources": [{ "title": "OWASP Top 10 web application security risks", "url": "https://top10.owasp.org/", "reviewed": "2026-10-03" }]
+    },
+    {
+      "slug": "customer-portal-or-email", "group": "app", "service": "apps", "status": "published",
+      "title": "Customer portal or email: when is a portal worth building?",
+      "metaTitle": "Customer portal or email: when is a portal worth it?",
+      "description": "When repeated status requests and document exchange justify a customer portal, and when email or software you already have is enough.",
+      "excerpt": "A decision table and a minimum useful portal scope, including the cases where email is still the right answer.",
+      "answer": "A portal is worth considering when customers keep asking the same status questions or you swap sensitive documents often, and most customers would actually log in. If neither is true, email or your existing software is usually enough.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["app-website-or-existing-tool", "enquiry-to-booking-workflow", "small-business-app-maintenance"],
+      "sources": []
+    },
+    {
+      "slug": "small-business-app-maintenance", "group": "app", "service": "apps", "status": "published",
+      "title": "What happens after an app launches?",
+      "metaTitle": "What happens after a small business app launches?",
+      "description": "The ongoing work after launch, including monitoring, updates, backups, access and support, and who is responsible for each.",
+      "excerpt": "A responsibility checklist for owner and developer covering updates, backups, access and support.",
+      "answer": "Software needs looking after once it is live: updates, backups you have tested, monitoring, access control and someone to call when it breaks. Agree who does each of these before launch, not after the first problem.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["website-app-ownership-handover", "ai-built-app-production-checklist", "small-website-app-cost-factors"],
+      "sources": []
+    },
+    {
+      "slug": "when-to-involve-a-developer", "group": "help", "service": "apps", "status": "published",
+      "title": "When should you involve a developer in a small website or app project?",
+      "metaTitle": "When to involve a developer in a small project",
+      "description": "Three scenarios, do it yourself, get a focused review, or engage someone to build, and the decisions an experienced developer helps you get right.",
+      "excerpt": "Three scenarios, from doing it yourself to engaging a builder, and what experienced help actually changes.",
+      "answer": "You can often start without a developer. Involve one when the problem is unclear, when data or payments are involved, when systems must connect, or when the thing has to keep working. The value is mostly in decisions made early, not in typing code.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["diy-freelancer-studio-or-agency", "small-website-app-cost-factors", "website-app-project-brief"],
+      "sources": []
+    },
+    {
+      "slug": "diy-freelancer-studio-or-agency", "group": "help", "service": "apps", "status": "published",
+      "title": "DIY, freelancer, small studio or agency: how do you choose?",
+      "metaTitle": "DIY, freelancer, studio or agency: how to choose",
+      "description": "A balanced comparison of four ways to get a website or app built, when each one fits, and what to ask before you commit.",
+      "excerpt": "A balanced comparison matrix and the questions to ask each kind of provider.",
+      "answer": "Match the option to the project. Do it yourself when it is simple and you have the time; use a freelancer for a well-defined piece of work; consider a small studio or agency when several skills must work together and someone needs to be accountable for the whole.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["small-website-app-cost-factors", "website-app-project-brief", "website-app-ownership-handover"],
+      "sources": []
+    },
+    {
+      "slug": "small-website-app-cost-factors", "group": "help", "service": "websites", "status": "published",
+      "title": "What affects the cost of a small website or custom app?",
+      "metaTitle": "What affects the cost of a small website or app",
+      "description": "The factors that drive the cost of a small website or custom app, plus a worksheet for comparing quotes. This is not a price list.",
+      "excerpt": "The factors behind a quote and a worksheet for comparing quotes like for like. Not a price list.",
+      "answer": "Cost follows scope: how many things the site or app must do, how many kinds of user, how many other systems it connects to, how much content or data must move, and how it will be looked after. Compare quotes by what each includes, not by the total alone.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["website-app-project-brief", "diy-freelancer-studio-or-agency", "scope-small-business-app"],
+      "sources": []
+    },
+    {
+      "slug": "website-app-project-brief", "group": "help", "service": "websites", "status": "published",
+      "title": "How to write a useful brief for a website or small app",
+      "metaTitle": "How to write a useful website or app brief",
+      "description": "A copyable brief template and a fictional completed example, so you can describe the problem clearly even without the technical vocabulary.",
+      "excerpt": "A copyable brief and a clearly fictional example, written so you can start without the technical vocabulary.",
+      "answer": "Describe the problem, who is affected, how the work happens today, what a good result looks like and what limits you have. You do not need to name a technology or know your budget to write a brief that someone can act on.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["small-website-app-cost-factors", "scope-small-business-app", "better-business-enquiry-form"],
+      "sources": []
+    },
+    {
+      "slug": "website-app-ownership-handover", "group": "help", "service": "cloud", "status": "published",
+      "title": "Who owns your website, code, domain and business data?",
+      "metaTitle": "Who owns your website, code, domain and data?",
+      "description": "A handover checklist covering accounts, domain, hosting, code, licences and data exports, plus questions to settle with a supplier before work starts.",
+      "excerpt": "A handover checklist and the questions to settle before work begins. Practical access, not legal advice.",
+      "answer": "Ownership has two parts: who legally holds the rights, which depends on your agreement, and who actually holds the keys. Make sure your domain, hosting and data accounts are in your business's name and that you can get a working copy of everything.",
+      "published": "2026-10-03", "updated": "2026-10-03",
+      "related": ["small-business-app-maintenance", "diy-freelancer-studio-or-agency", "when-to-involve-a-developer"],
+      "sources": [{ "title": "OAIC: Small business and the Privacy Act", "url": "https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies/organisations/small-business", "reviewed": "2026-10-03" }]
+    }
+  ]
+}

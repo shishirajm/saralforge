@@ -1,0 +1,59 @@
+<p>Launching an app is the start of its working life, not the end of the project. Software depends on other software, services and accounts that change over time. Someone has to look after it, and it is far better to decide who before launch than to find out when something stops working.</p>
+
+<h2>What upkeep involves</h2>
+<ul>
+  <li><strong>Monitoring.</strong> Knowing when the app is down or failing, ideally before customers tell you.</li>
+  <li><strong>Updates.</strong> The libraries and services an app uses release fixes, including security fixes. They need to be applied and checked.</li>
+  <li><strong>Backups and restore tests.</strong> Having backups is not enough. Someone should try restoring one now and then.</li>
+  <li><strong>Access.</strong> Who can log in to the hosting, the database and the code, and who removes access when someone leaves.</li>
+  <li><strong>Support.</strong> Who users contact when they cannot log in or something looks wrong.</li>
+  <li><strong>Incident handling.</strong> What happens when the app goes down or data is exposed: who is told, who decides and who fixes.</li>
+  <li><strong>Renewals and costs.</strong> Domain, hosting and other service fees, and who pays and watches them.</li>
+  <li><strong>Improvement.</strong> Collecting feedback and deciding what to change next.</li>
+</ul>
+
+<h2>A responsibility checklist for owner and developer</h2>
+<p>Use this as a conversation guide. For each row, agree who does it and write it down.</p>
+<table>
+  <caption>Who does what after launch</caption>
+  <thead><tr><th scope="col">Task</th><th scope="col">Usually the owner</th><th scope="col">Usually the developer or maintainer</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Pay for domain, hosting and services</th><td>Holds the accounts and pays the bills</td><td>Advises on what is needed</td></tr>
+    <tr><th scope="row">Apply updates and security fixes</th><td>Agrees the schedule and any cost</td><td>Does the work and tests it</td></tr>
+    <tr><th scope="row">Run and test backups</th><td>Confirms it happens</td><td>Sets it up and tests a restore</td></tr>
+    <tr><th scope="row">Monitor for failures</th><td>Decides who gets alerts</td><td>Sets up monitoring and responds</td></tr>
+    <tr><th scope="row">Help users</th><td>First point of contact for staff and customers</td><td>Fixes problems the owner passes on</td></tr>
+    <tr><th scope="row">Manage who has access</th><td>Approves who needs it</td><td>Adds and removes it</td></tr>
+    <tr><th scope="row">Decide what to improve next</th><td>Sets priorities</td><td>Estimates and builds</td></tr>
+    <tr><th scope="row">Respond to an incident</th><td>Decides on notifying customers</td><td>Investigates and fixes</td></tr>
+  </tbody>
+</table>
+
+<h2>Agreeing the details</h2>
+<p>Every maintenance arrangement should answer these questions plainly. They are the owner's questions, not a package any provider has to offer.</p>
+<ul class="checklist">
+  <li>What is included, and what costs extra?</li>
+  <li>How do you report a problem, and what response can you expect? Ask for it in writing rather than assuming.</li>
+  <li>What happens if the developer is unavailable? Can someone else take over from the documentation?</li>
+  <li>Where are the accounts, and who has the passwords?</li>
+  <li>How are changes tested before they go live?</li>
+  <li>How often will backups be restored as a test?</li>
+</ul>
+<p>Be wary of any promise of guaranteed uptime or response times unless it is written into an agreement that you have read. Likewise, be wary of a developer who cannot explain how they would look after the app.</p>
+
+<h2>Set it up before launch</h2>
+<ul class="checklist">
+  <li>Make a list of every account the app depends on and record who controls each.</li>
+  <li>Put renewal dates in a calendar.</li>
+  <li>Choose one person on your side who owns the app's day-to-day decisions.</li>
+  <li>Keep a short list of problems users report, so you can see patterns.</li>
+  <li>Ask for the documentation of how the app is set up, and keep a copy.</li>
+</ul>
+
+<aside class="example">
+  <p class="example-label">Hypothetical example</p>
+  <p>A fictional landscaping business has a job-tracking app built by a contractor. A year later the contractor is busy and a hosting renewal fails. Nobody on the business side knows which account the hosting is under. The business loses a day. With a short list of accounts, an agreed contact and recorded setup notes, the same problem would have been a ten-minute fix.</p>
+</aside>
+
+<h2>When you would rather not carry it yourself</h2>
+<p>Ask for ongoing help when real customer data is involved, when the app is important to daily work, or when you do not want to carry the responsibility yourself. A maintainer can also check infrastructure, costs and recovery plans. See the <a href="/services.html#cloud">cloud and cost clarity service</a> for how the supporting systems fit in. Before launch, the <a href="/guides/ai-built-app-production-checklist.html">readiness checklist</a> shows what to verify first. The <a href="/guides/website-app-ownership-handover.html">ownership checklist</a> covers accounts and access. When you budget, <a href="/guides/small-website-app-cost-factors.html">what affects cost</a> explains why upkeep belongs in the total.</p>

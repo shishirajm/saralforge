@@ -1,0 +1,63 @@
+<p>"My website is not on Google" can mean two quite different things. Either Google does not have your pages in its index at all, or it has them but does not show them for the searches you care about. The fixes are different, so find out which one you have before changing anything.</p>
+
+<h2>Indexing and ranking are different problems</h2>
+<ul>
+  <li><strong>Indexing</strong> means Google has found a page, read it and stored it so it can appear in results. A page that is not indexed cannot appear at all.</li>
+  <li><strong>Ranking</strong> is where an indexed page appears for a given search. It depends on many factors, and nobody can promise a position.</li>
+</ul>
+<p>Google's own guidance is direct on both points. It says there is no guarantee that any particular site will be added to its index, and that there are no secrets that automatically rank a site first. A sitemap does not change that. It helps Google find your pages, and it does not promise anything.</p>
+
+<h2>Step one: check whether your pages are indexed</h2>
+<ol class="steps">
+  <li><strong>Search for your site.</strong> Type <code>site:yourdomain.com</code> into Google, using your own address. If your pages appear, they are indexed. If nothing appears, they may not be.</li>
+  <li><strong>Use Google Search Console.</strong> It is free, and you prove ownership of your site to use it. The URL Inspection tool shows whether Google can see a specific page, and the page indexing report lists pages and the reasons some are not indexed.</li>
+  <li><strong>Search for your business name</strong> as well as for your services. A site may appear for its own name long before it appears for general searches.</li>
+</ol>
+
+<h2>What the common Search Console messages mean</h2>
+<table>
+  <caption>Common page indexing statuses, in plain terms</caption>
+  <thead><tr><th scope="col">Status</th><th scope="col">What it means</th><th scope="col">What to do</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Excluded by "noindex" tag</th><td>Google found a rule telling it not to index the page.</td><td>If you did not intend this, remove the rule. See below.</td></tr>
+    <tr><th scope="row">Discovered, currently not indexed</th><td>Google knows the page exists but has not visited it yet.</td><td>Make sure other pages link to it, and wait. New sites can take time.</td></tr>
+    <tr><th scope="row">Crawled, currently not indexed</th><td>Google visited the page but chose not to add it, at least for now.</td><td>Check the page is useful, distinct and linked from elsewhere on your site. It may be indexed later.</td></tr>
+  </tbody>
+</table>
+
+<h2>Accidental blocks to rule out</h2>
+<ul class="checklist">
+  <li><strong>A noindex rule.</strong> A "noindex" instruction in a page's code tells search engines to leave it out. It is often added deliberately while a site is being built and then forgotten at launch.</li>
+  <li><strong>A robots.txt file blocking crawlers.</strong> This file tells crawlers which areas to avoid. If it blocks your whole site, Google cannot read your pages. It also stops Google from seeing a noindex rule, so it is not a reliable way to hide a page.</li>
+  <li><strong>A preview or test address.</strong> Preview versions of a site are often set to stay out of search. Check that your real address is the one set up for the public.</li>
+  <li><strong>Competing addresses.</strong> If the same page is available at several addresses, such as with and without "www", Google chooses one. A canonical link tells it which you prefer. Using the same address in your internal links helps.</li>
+</ul>
+<p>If you use a website builder, look in its settings for a "hide from search engines" option before assuming anything else.</p>
+
+<h2>A sequence for a new website</h2>
+<ol class="steps">
+  <li>Confirm that no noindex rule or full-site robots block remains from the build.</li>
+  <li>Check that every page links to others, starting with the home page, so Google can follow links to each page.</li>
+  <li>Verify the site in Search Console and inspect your home page.</li>
+  <li>Optionally submit a sitemap. For a small, well-linked site, Google says it may not be needed, but it is optional and does no harm.</li>
+  <li>Wait. Discovery and indexing of a new site can take days or weeks, and it is normal for pages to appear gradually.</li>
+  <li>Work on being useful: clear pages that answer what people search for. Google's guidance on helpful content asks whether a page offers value to people, not just whether it contains keywords.</li>
+</ol>
+
+<h2>A sequence for an established website</h2>
+<ol class="steps">
+  <li>Ask what changed. A redesign, a platform move or new settings are common causes of sudden drops.</li>
+  <li>Inspect key pages in Search Console and read the stated reason.</li>
+  <li>Check for new noindex rules, new robots rules, or changed page addresses without redirects.</li>
+  <li>Compare your pages with what searchers actually want. Are they distinct, current and helpful?</li>
+  <li>Review how other sites and your own pages link to the ones that matter.</li>
+  <li>Accept that rankings move for reasons outside your control, and focus on what you can improve.</li>
+</ol>
+
+<aside class="example">
+  <p class="example-label">Hypothetical example</p>
+  <p>A fictional accountant's new site does not appear for <code>site:</code> searches a month after launch. Search Console says every page is "Excluded by noindex tag". The developer had left a rule on from the build stage. Removing it and requesting inspection of the home page lets Google reconsider. That is the only change needed, and it does not guarantee any particular ranking afterwards.</p>
+</aside>
+
+<h2>When a technical review is worth paying for</h2>
+<p>Get help when you cannot find the cause after these checks, when you have migrated a site and lost visibility, or when you suspect technical issues such as redirects, duplicate pages or blocked resources. A focused technical review can be a faster route than guessing. Google says there are no secrets that automatically rank a site first, so be wary of anyone who promises first-page results. If your site is indexed but not producing enquiries, the <a href="/guides/website-visitors-no-enquiries.html">self-audit for missing enquiries</a> is a better next step, and the <a href="/guides/small-business-website-checklist.html">website checklist</a> shows what pages should say.</p>
