@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { generatedPages, loadGuides } from '../scripts/guides.mjs';
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const src = path.join(projectRoot, 'src');
@@ -31,13 +32,15 @@ test('public metadata uses the owned domain', async () => {
 
 test('local file references resolve', async () => {
   const referencePattern = /(?:href|src)="([^"]+)"/g;
+  const generated = new Set(generatedPages(await loadGuides()).keys());
   for (const file of htmlFiles) {
     const html = await readFile(path.join(src, file), 'utf8');
     for (const [, reference] of html.matchAll(referencePattern)) {
       if (/^(?:https?:|#|mailto:|tel:)/.test(reference)) continue;
       const relative = reference.split('#')[0].split('?')[0];
       if (!relative) continue;
-      const target = path.resolve(src, relative);
+      if (generated.has(relative.replace(/^\//, ''))) continue;
+      const target = path.resolve(src, relative.replace(/^\//, ''));
       await assert.doesNotReject(access(target), `${file}: missing ${reference}`);
     }
   }

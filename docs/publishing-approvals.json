@@ -8,5 +8,7 @@
   "legalIdentityApproved": true,
   "legalIdentityNote": "Sydney/Australia identity claims approved by Shishir. ABN publication is explicitly deferred until it is supplied.",
   "retentionPolicyApproved": true,
-  "retentionPolicyNote": "Shishir approved seven years of retention for emailed enquiries and access limited to the Saral Forge admin on 3 October 2026. The website does not store the form contents."
+  "retentionPolicyNote": "Shishir approved seven years of retention for emailed enquiries and access limited to the Saral Forge admin on 3 October 2026. The website does not store the form contents.",
+  "guidesEditorialApproved": true,
+  "guidesEditorialNote": "Shishir reviewed the guides locally on 3 October 2026 and instructed publication in chat (\"looks good, commit push and merge also publish to GCP\"). Approval covers the 20 guides as committed, authored \"By Saral Forge\". Any later substantive change needs the same review."
 }

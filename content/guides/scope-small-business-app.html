@@ -1,0 +1,100 @@
+<p>A common reason small app projects struggle is that the first version tries to do everything. A good first version does one job for one group of people, and does it well enough to learn from. Scoping means deciding, in writing, what that is and what it is not.</p>
+
+<h2>What "MVP" means in ordinary language</h2>
+<p>MVP stands for minimum viable product. In plain words, it is the smallest version that is genuinely useful to a real user. It is not a rough or careless version. It is a deliberately small one, which still needs to be reliable. The point is to put something in people's hands, see what they actually do, and decide what to add next from evidence rather than guesses.</p>
+
+<h2>Six steps to a scope</h2>
+<ol class="steps">
+  <li><strong>Choose one group of users.</strong> "Everyone" is not a group. Pick the people whose problem is most painful, such as your two office staff.</li>
+  <li><strong>Choose one job.</strong> Describe it as a sentence: "Staff can record a job and see its status." If you need the word "and" many times, you have several jobs.</li>
+  <li><strong>List the essential steps.</strong> The path from start to finish in the normal case, in order.</li>
+  <li><strong>List the exceptions.</strong> What happens when a customer cancels, a field is missing, two people edit the same record, or someone leaves?</li>
+  <li><strong>Write acceptance criteria.</strong> These are plain statements that tell you the job is done, such as "A new job can be recorded in under a minute without help."</li>
+  <li><strong>Write the "not now" list.</strong> Features you want but will leave for later. Writing them down makes it easier to say no.</li>
+</ol>
+
+<h2>Signs your scope is too big</h2>
+<ul class="checklist">
+  <li>It has more than one group of users with different needs.</li>
+  <li>You cannot describe it in two sentences.</li>
+  <li>The list of "must haves" keeps growing.</li>
+  <li>It depends on connecting to many other systems.</li>
+  <li>You are planning how it will work for thousands of users before you have ten.</li>
+</ul>
+
+<h2>A completed one-page scope</h2>
+<aside class="example">
+  <p class="example-label">Hypothetical example</p>
+  <p>This scope is invented for a fictional equipment-hire business. It shows the level of detail that helps. It is not a client project.</p>
+</aside>
+<pre class="copy-block">FIRST VERSION SCOPE (fictional example)
+
+Users: the two counter staff. Not customers yet.
+
+The job: record which equipment is out, with whom, and when it
+is due back.
+
+Essential steps
+1. Staff search for an item.
+2. Staff record who has it and the return date.
+3. Staff mark it returned.
+4. Staff see a list of items overdue today.
+
+Exceptions to handle
+- An item is already marked out when someone tries to hire it.
+- A customer returns an item early or late.
+- An item is damaged and must be taken out of use.
+- Two staff edit the same item at once.
+
+Done means
+- A hire can be recorded in under a minute without help.
+- No item can be shown as available and out at the same time.
+- The overdue list is correct at the start of each day.
+- Staff can find the history of any item.
+
+Not now
+- Customer logins or online booking
+- Payments and invoices
+- Reports and graphs
+- A mobile app
+
+How we will know it worked
+After four weeks, staff stop using the paper book.</pre>
+
+<h2>A blank version to copy</h2>
+<pre class="copy-block">FIRST VERSION SCOPE
+
+Users:
+
+The job (one sentence):
+
+Essential steps
+1.
+2.
+3.
+
+Exceptions to handle
+-
+-
+
+Done means
+-
+-
+
+Not now
+-
+-
+
+How we will know it worked:</pre>
+
+<h2>Test the scope before anyone builds</h2>
+<ul class="checklist">
+  <li>Fill in the template, then show it to the people who will use it.</li>
+  <li>Walk the essential steps with a pen and paper, pretending to be a user.</li>
+  <li>Check whether an existing tool already covers the steps. See <a href="/guides/app-website-or-existing-tool.html">app, website or existing tool?</a></li>
+  <li>Cut the scope by a third, then check whether it is still useful.</li>
+  <li>Find the part you are least sure will work, such as a connection to another system, and test that first.</li>
+</ul>
+
+<h2>Why experienced eyes help most at this stage</h2>
+<p>An experienced person is most valuable here, before anything is built. They notice exceptions you have not listed, ask about data and permissions, and can often see a smaller first version than you had in mind. Ask for help when your scope involves customer information, payments, or other systems. If you used AI tools to produce a prototype, check it against the <a href="/guides/ai-built-app-production-checklist.html">readiness checklist</a> before real data goes in. Your scope also becomes the heart of a <a href="/guides/website-app-project-brief.html">project brief</a>, and it makes <a href="/guides/small-website-app-cost-factors.html">comparing quotes</a> far easier.</p>

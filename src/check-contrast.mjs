@@ -31,6 +31,10 @@ const pairs = [
   ['muted.light', 'paper.100', 4.5],
   ['text.light', 'paper.warm', 4.5],
   ['muted.light', 'paper.warm', 4.5],
+  ['blue.800', 'paper.100', 4.5],
+  ['blue.800', 'paper.warm', 4.5],
+  ['violet.800', 'paper.100', 4.5],
+  ['violet.800', 'paper.warm', 4.5],
   ['feedback.error', 'paper.warm', 4.5],
   ['feedback.success', 'paper.warm', 4.5]
 ];

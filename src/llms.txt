@@ -7,6 +7,7 @@
 - [Home](https://saralforge.com/): Studio overview, selected work and services
 - [Services](https://saralforge.com/services.html): Websites, booking, automation, applications and cloud engineering
 - [Work](https://saralforge.com/work.html): Illustrative problem patterns, not client case studies
+- [Guides](https://saralforge.com/guides.html): Practical guides to websites, small apps and everyday business workflows
 - [About](https://saralforge.com/about.html): Studio principles and approach
 - [Start a project](https://saralforge.com/start.html): Project brief that opens the visitor's email app
 

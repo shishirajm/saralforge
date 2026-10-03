@@ -3,6 +3,7 @@ https://saralforge.com/,live,,Canonical apex home; production build is indexable
 https://saralforge.com/services.html,live,,Services
 https://saralforge.com/work.html,live,,Illustrative example workflows
 https://saralforge.com/about.html,live,,Studio principles
+https://saralforge.com/guides.html,live,,Guides library; generated from content/guides/guides.json
 https://saralforge.com/start.html,live,,Project brief opens visitor email app
 https://saralforge.com/privacy.html,live,,Privacy statement
 https://saralforge.com/terms.html,live,,Terms
@@ -13,3 +14,23 @@ https://saralforge.com/sitemap.xml,live,,Public URL inventory
 https://saralforge.com/llms.txt,live,,Machine-readable site summary
 https://saralforge.com/.well-known/security.txt,live,,Security contact points to the project form
 https://www.saralforge.com/,redirect,https://saralforge.com/,Firebase custom-domain redirect
+https://saralforge.com/guides/website-visitors-no-enquiries.html,live,,Guide (website); published 2026-10-03
+https://saralforge.com/guides/website-builder-or-custom-website.html,live,,Guide (website); published 2026-10-03
+https://saralforge.com/guides/small-business-website-checklist.html,live,,Guide (website); published 2026-10-03
+https://saralforge.com/guides/business-website-not-showing-on-google.html,live,,Guide (website); published 2026-10-03
+https://saralforge.com/guides/better-business-enquiry-form.html,live,,Guide (website); published 2026-10-03
+https://saralforge.com/guides/spreadsheet-or-small-business-app.html,live,,Guide (admin); published 2026-10-03
+https://saralforge.com/guides/reduce-duplicate-data-entry.html,live,,Guide (admin); published 2026-10-03
+https://saralforge.com/guides/enquiry-to-booking-workflow.html,live,,Guide (admin); published 2026-10-03
+https://saralforge.com/guides/what-to-automate-first.html,live,,Guide (admin); published 2026-10-03
+https://saralforge.com/guides/ai-or-workflow-automation.html,live,,Guide (admin); published 2026-10-03
+https://saralforge.com/guides/app-website-or-existing-tool.html,live,,Guide (app); published 2026-10-03
+https://saralforge.com/guides/scope-small-business-app.html,live,,Guide (app); published 2026-10-03
+https://saralforge.com/guides/ai-built-app-production-checklist.html,live,,Guide (app); published 2026-10-03
+https://saralforge.com/guides/customer-portal-or-email.html,live,,Guide (app); published 2026-10-03
+https://saralforge.com/guides/small-business-app-maintenance.html,live,,Guide (app); published 2026-10-03
+https://saralforge.com/guides/when-to-involve-a-developer.html,live,,Guide (help); published 2026-10-03
+https://saralforge.com/guides/diy-freelancer-studio-or-agency.html,live,,Guide (help); published 2026-10-03
+https://saralforge.com/guides/small-website-app-cost-factors.html,live,,Guide (help); published 2026-10-03
+https://saralforge.com/guides/website-app-project-brief.html,live,,Guide (help); published 2026-10-03
+https://saralforge.com/guides/website-app-ownership-handover.html,live,,Guide (help); published 2026-10-03

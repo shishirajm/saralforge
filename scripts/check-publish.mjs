@@ -5,7 +5,15 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const src = path.join(root, 'dist');
 const production = process.argv.includes('--production');
-const htmlFiles = (await readdir(src)).filter((file) => file.endsWith('.html'));
+async function htmlFilesIn(directory, prefix = '') {
+  const found = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    if (entry.isDirectory()) found.push(...await htmlFilesIn(path.join(directory, entry.name), `${prefix}${entry.name}/`));
+    else if (entry.name.endsWith('.html')) found.push(`${prefix}${entry.name}`);
+  }
+  return found;
+}
+const htmlFiles = await htmlFilesIn(src);
 const publicHtmlFiles = htmlFiles.filter((file) => !['404.html', 'products.html'].includes(file));
 const failures = [];
 const robots = await readFile(path.join(src, 'robots.txt'), 'utf8');
@@ -19,6 +27,49 @@ for (const file of htmlFiles) {
   if (text.includes('https://sarallabs.com')) {
     failures.push(`${file}: still refers to sarallabs.com`);
   }
+}
+
+const { loadGuides, SITE } = await import('./guides.mjs');
+const library = await loadGuides();
+const expectedGuides = new Set(library.published.map((guide) => `guides/${guide.slug}.html`));
+const builtGuides = htmlFiles.filter((file) => file.startsWith('guides/'));
+for (const file of builtGuides) if (!expectedGuides.has(file)) failures.push(`${file}: built but not a published guide in content/guides/guides.json`);
+for (const file of expectedGuides) if (!builtGuides.includes(file)) failures.push(`${file}: published guide is missing from the build`);
+const sitemap = await readFile(path.join(src, 'sitemap.xml'), 'utf8');
+for (const file of ['guides.html', ...expectedGuides]) {
+  if (!sitemap.includes(`<loc>${SITE}/${file}</loc>`)) failures.push(`sitemap.xml: missing ${file}`);
+}
+for (const guide of library.guides.filter((item) => item.status !== 'published')) {
+  if (sitemap.includes(`/guides/${guide.slug}.html`)) failures.push(`sitemap.xml: lists draft ${guide.slug}`);
+}
+for (const unlisted of ['products.html', '404.html']) if (sitemap.includes(`/${unlisted}</loc>`)) failures.push(`sitemap.xml: lists ${unlisted}`);
+const seen = { title: new Map(), description: new Map() };
+for (const file of builtGuides) {
+  const html = await readFile(path.join(src, file), 'utf8');
+  const h1 = html.match(/<h1[^>]*>([^<]+)<\/h1>/)?.[1];
+  const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
+  if (html.match(/<meta property="og:url" content="([^"]+)">/)?.[1] !== canonical) failures.push(`${file}: og:url does not match canonical`);
+  for (const field of ['title', 'description']) {
+    const value = field === 'title' ? html.match(/<title>([^<]+)<\/title>/)?.[1] : html.match(/<meta name="description" content="([^"]+)">/)?.[1];
+    if (!value) { failures.push(`${file}: missing ${field}`); continue; }
+    if (seen[field].has(value)) failures.push(`${file}: ${field} duplicates ${seen[field].get(value)}`);
+    seen[field].set(value, file);
+  }
+  try {
+    const graph = JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1])['@graph'];
+    const article = graph.find((node) => node['@type'] === 'Article');
+    const crumbs = graph.find((node) => node['@type'] === 'BreadcrumbList');
+    const decode = (text) => text.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+    if (!article || decode(h1) !== article.headline) failures.push(`${file}: Article headline does not match the H1`);
+    if (!crumbs || crumbs.itemListElement.at(-1).item !== canonical) failures.push(`${file}: breadcrumb does not end at the canonical URL`);
+  } catch {
+    failures.push(`${file}: structured data is missing or is not valid JSON`);
+  }
+}
+for (const file of htmlFiles.filter((name) => name !== '404.html')) {
+  const html = await readFile(path.join(src, file), 'utf8');
+  const expected = `${SITE}/${file === 'index.html' ? '' : file}`;
+  if (!html.includes(`<link rel="canonical" href="${expected}">`)) failures.push(`${file}: canonical link is not ${expected}`);
 }
 
 if (!production) {
@@ -39,6 +90,7 @@ if (production) {
   if (/^Disallow:\s*\/$/m.test(robots)) {
     failures.push('production: robots.txt still blocks the whole site');
   }
+  if (expectedGuides.size && approvals.guidesEditorialApproved !== true) failures.push('production: Guides have not been editorially approved by Shishir');
   const requiredApprovals = {
     audienceAndLeadingOfferApproved: 'audience and leading offer approval',
     claimsApproved: 'final claims approval',

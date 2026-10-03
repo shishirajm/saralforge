@@ -1,0 +1,79 @@
+<p>An enquiry form has one job: let a stranger tell you what they need so you can reply well. Forms often fail in one of two ways. They ask for too much and put people off, or they look fine and quietly lose the message.</p>
+
+<h2>What to ask for</h2>
+<p>Ask for what you need to reply usefully, and no more. You can ask for detail in the reply once a conversation has started.</p>
+<table>
+  <caption>Typical enquiry form fields</caption>
+  <thead><tr><th scope="col">Field</th><th scope="col">Include?</th><th scope="col">Why</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Name</th><td>Yes</td><td>So you know how to address the reply.</td></tr>
+    <tr><th scope="row">Email or phone</th><td>Yes, at least one</td><td>You need a way to reply. Consider letting people choose.</td></tr>
+    <tr><th scope="row">What do you need?</th><td>Yes</td><td>This is the enquiry. Give a hint of what helps, such as location and timing.</td></tr>
+    <tr><th scope="row">Business name</th><td>Optional</td><td>Useful if you serve businesses. Mark it as optional.</td></tr>
+    <tr><th scope="row">Budget</th><td>Optional, if at all</td><td>Many people do not know yet. "Not sure" must be a valid answer.</td></tr>
+    <tr><th scope="row">Address, date of birth, other details</th><td>No, unless the job needs it</td><td>Collect the minimum. Extra personal details increase your responsibility without helping the reply.</td></tr>
+  </tbody>
+</table>
+
+<h2>Make it work for real people</h2>
+<ul class="checklist">
+  <li><strong>Label every field</strong> with visible text that stays visible while typing. Do not rely on a faint placeholder as the only label.</li>
+  <li><strong>Say what is required</strong> and what is optional.</li>
+  <li><strong>Use the right keyboard on phones.</strong> An email field should bring up the email keyboard, and a phone field the number pad.</li>
+  <li><strong>Explain errors in words</strong> next to the field, and keep what the person has already typed.</li>
+  <li><strong>Make it usable by keyboard</strong> alone, with a visible focus indicator.</li>
+  <li><strong>Make the button say what happens</strong>, such as "Send enquiry".</li>
+</ul>
+<p>The W3C's forms guidance is a good plain reference. It recommends labelling each control, giving instructions where they help, validating input with useful messages and grouping related fields.</p>
+
+<h2>Spam without making people suffer</h2>
+<p>Forms attract automated spam. A hidden field that real people never fill in, combined with checks on the receiving side, can reduce it without asking visitors to solve puzzles. Be cautious with tools that add friction for everyone to stop a few bots.</p>
+
+<h2>The part most people skip: where does the message go?</h2>
+<p>Three very different things can sit behind a form's button.</p>
+<table>
+  <caption>Kinds of form submission</caption>
+  <thead><tr><th scope="col">Kind</th><th scope="col">What happens</th><th scope="col">Watch out for</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Opens an email app</th><td>The visitor's own email app opens with a prepared message. Nothing is sent until they press send.</td><td>It needs a configured email app. The website receives nothing itself. The page should say so.</td></tr>
+    <tr><th scope="row">Sends through a form service</th><td>The website passes the message to a service that emails it to you.</td><td>Spam filtering, delivery failures and where the data is stored.</td></tr>
+    <tr><th scope="row">Saves to your own system</th><td>The message is stored in a database or system and notifies you.</td><td>You are now responsible for storing it securely and for keeping it for as long as needed.</td></tr>
+  </tbody>
+</table>
+<p>None is wrong. What matters is that the confirmation message is true. Saying "Thanks, we have your message" when it only opened an email app, or when delivery failed, is how enquiries disappear. For example, the project form on this site opens your own email app, and its page tells you that nothing is sent until you press send.</p>
+
+<h2>Before and after: an illustrative form</h2>
+<aside class="example">
+  <p class="example-label">Hypothetical example</p>
+  <p>A fictional tree-lopping business has the form on the left and changes it to the form on the right.</p>
+</aside>
+<pre class="copy-block">BEFORE (10 fields, all required)
+First name, last name, company, job title, phone, email,
+address, preferred contact time, budget, message.
+Button: Submit
+After sending: the page reloads with no message at all
+
+AFTER (4 fields)
+Name (required)
+Phone or email (required)
+Suburb (required, so we know if we cover it)
+What needs doing? (required, with a hint: "Number of trees,
+rough size, any access issues")
+Button: Send enquiry
+After sending: "Thanks, we have your message and will reply
+within one business day." (only shown after delivery succeeds)</pre>
+<p>The shorter form is not magic. It simply asks for what the owner needs to reply and tells the truth about what happened. If you promise a reply time, make sure someone is there to keep it.</p>
+
+<h2>A delivery-testing checklist</h2>
+<ul class="checklist">
+  <li>Submit the form from a phone and a computer, using a different email address from yours.</li>
+  <li>Check that the message arrives, and how long it takes.</li>
+  <li>Check the spam folder of the receiving mailbox.</li>
+  <li>Submit with a field missing and confirm the error is clear and nothing is lost.</li>
+  <li>Disconnect from the internet and submit. Is the failure message honest?</li>
+  <li>Reply to the message. Does it go to the person who wrote it?</li>
+  <li>Repeat monthly, and after any change to your website or email.</li>
+</ul>
+
+<h2>When delivery problems need an expert</h2>
+<p>If tests sometimes pass and sometimes fail, the cause is usually email delivery or spam filtering, which is hard to diagnose without access to the settings. Help is also worthwhile if enquiries must feed a booking or customer system, or if you collect sensitive information. A <a href="/guides/website-app-project-brief.html">clear brief</a> helps anyone work out what the form must do, and the <a href="/guides/enquiry-to-booking-workflow.html">enquiry-to-booking workflow</a> shows what should happen after the message arrives.</p>
