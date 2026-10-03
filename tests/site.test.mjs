@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { access, readFile, readdir } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
+import { access, mkdtemp, readFile, readdir, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -41,20 +43,55 @@ test('local file references resolve', async () => {
   }
 });
 
-test('preview protections and safe form behaviour remain explicit', async () => {
+test('safe form behaviour remains explicit', async () => {
   const start = await readFile(path.join(src, 'start.html'), 'utf8');
   const app = await readFile(path.join(src, 'app.js'), 'utf8');
-  const robots = await readFile(path.join(src, 'robots.txt'), 'utf8');
-  for (const file of htmlFiles) {
-    const html = await readFile(path.join(src, file), 'utf8');
-    assert.match(html, /noindex, nofollow/, `${file} must remain non-indexed in preview`);
-  }
   assert.match(start, /needs JavaScript to enable/);
   assert.match(start, /type="submit" disabled/);
   assert.match(app, /mailto:\$\{CONTACT_EMAIL\}/);
   assert.match(app, /if \(website\.value\)/);
   assert.match(app, /querySelectorAll\('input, textarea, button'\).*disabled = false/);
-  assert.match(robots, /^Disallow:\s*\/$/m);
+});
+
+test('unpublished pages stay non-indexed and public pages stay indexable', async () => {
+  const unpublished = ['404.html', 'products.html'];
+  for (const file of htmlFiles) {
+    const html = await readFile(path.join(src, file), 'utf8');
+    if (unpublished.includes(file)) {
+      assert.match(html, /noindex, nofollow/, `${file} must stay non-indexed`);
+    } else {
+      assert.doesNotMatch(html, /noindex, nofollow/, `${file} should be indexable in production`);
+    }
+  }
+  const robots = await readFile(path.join(src, 'robots.txt'), 'utf8');
+  assert.doesNotMatch(robots, /^Disallow:\s*\/\s*$/m, 'robots.txt should not block the whole site');
+  assert.match(robots, /^Disallow:\s*\/products\.html\s*$/m);
+});
+
+test('builds protect the preview while leaving approved production pages indexable', async () => {
+  const temporary = await mkdtemp(path.join(tmpdir(), 'saral-forge-build-'));
+  try {
+    for (const target of ['preview', 'production']) {
+      const output = path.join(temporary, target);
+      execFileSync(process.execPath, [path.join(projectRoot, 'scripts/build.mjs')], {
+        env: { ...process.env, SARAL_BUILD_TARGET: target, SARAL_BUILD_OUTPUT: output }
+      });
+      const home = await readFile(path.join(output, 'index.html'), 'utf8');
+      const unpublished = await readFile(path.join(output, 'products.html'), 'utf8');
+      const robots = await readFile(path.join(output, 'robots.txt'), 'utf8');
+      assert.match(unpublished, /noindex, nofollow/);
+      if (target === 'preview') {
+        assert.match(home, /<meta name="robots" content="noindex, nofollow">/);
+        assert.match(robots, /^Disallow:\s*\/$/m);
+      } else {
+        assert.doesNotMatch(home, /noindex, nofollow/);
+        assert.doesNotMatch(robots, /^Disallow:\s*\/$/m);
+        assert.match(robots, /^Disallow:\s*\/products\.html$/m);
+      }
+    }
+  } finally {
+    await rm(temporary, { recursive: true, force: true });
+  }
 });
 
 test('the hero growth line waits until its artwork enters the viewport', async () => {

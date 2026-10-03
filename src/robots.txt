@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /
+Disallow: /products.html
 
 Sitemap: https://saralforge.com/sitemap.xml

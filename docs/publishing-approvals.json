@@ -2,11 +2,11 @@
   "audienceAndLeadingOfferApproved": true,
   "audienceAndLeadingOffer": "Small business owners needing websites and practical AI/LLM solutions.",
   "claimsApproved": true,
-  "contactDestination": "forgesaral@gmail.com",
-  "contactDeliveryVerified": true,
-  "contactDeliveryNote": "The project form opens a mailto: link to the visitor's own email client. There is no server-side delivery pipeline to verify.",
+  "contactDestination": "forgesaral+root@gmail.com",
+  "contactDeliveryVerified": false,
+  "contactDeliveryNote": "Shishir selected this enquiry address on 3 October 2026. Delivery to the new address awaits confirmation. The project form opens the visitor's email client; the site has no delivery pipeline.",
   "legalIdentityApproved": true,
   "legalIdentityNote": "Sydney/Australia identity claims approved by Shishir. ABN publication is explicitly deferred until it is supplied.",
-  "retentionPolicyApproved": false,
-  "retentionPolicyNote": "Not applicable: the site does not store or transmit enquiry data itself."
+  "retentionPolicyApproved": true,
+  "retentionPolicyNote": "Shishir approved seven years of retention for emailed enquiries and access limited to the Saral Forge admin on 3 October 2026. The website does not store the form contents."
 }

@@ -1,15 +1,15 @@
 url,status,redirect_target,notes
-https://saralforge.com/,preview,,Canonical apex home
-https://saralforge.com/services.html,preview,,Services
-https://saralforge.com/work.html,preview,,Illustrative example workflows
-https://saralforge.com/about.html,preview,,Studio principles
-https://saralforge.com/start.html,preview,,Local-only project brief form
-https://saralforge.com/privacy.html,preview,,Preview privacy statement
-https://saralforge.com/terms.html,preview,,Preview terms
+https://saralforge.com/,live,,Canonical apex home; production build is indexable
+https://saralforge.com/services.html,live,,Services
+https://saralforge.com/work.html,live,,Illustrative example workflows
+https://saralforge.com/about.html,live,,Studio principles
+https://saralforge.com/start.html,live,,Project brief opens visitor email app
+https://saralforge.com/privacy.html,live,,Privacy statement
+https://saralforge.com/terms.html,live,,Terms
 https://saralforge.com/products.html,unpublished,,Product information intentionally withheld and noindexed
 https://saralforge.com/404.html,system,,Custom not-found page
-https://saralforge.com/robots.txt,preview,,Whole-site preview crawl block
-https://saralforge.com/sitemap.xml,preview,,Public URL inventory for the future launch domain
-https://saralforge.com/llms.txt,preview,,Machine-readable site summary
-https://saralforge.com/.well-known/security.txt,preview,,Security contact points to the disabled preview contact route
-https://www.saralforge.com/,planned-redirect,https://saralforge.com/,Configure as a Firebase custom-domain redirect at launch
+https://saralforge.com/robots.txt,live,,Production allows public pages; preview build blocks all crawling
+https://saralforge.com/sitemap.xml,live,,Public URL inventory
+https://saralforge.com/llms.txt,live,,Machine-readable site summary
+https://saralforge.com/.well-known/security.txt,live,,Security contact points to the project form
+https://www.saralforge.com/,redirect,https://saralforge.com/,Firebase custom-domain redirect

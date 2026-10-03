@@ -101,7 +101,7 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
 
 document.querySelectorAll('[data-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });
 
-const CONTACT_EMAIL = 'forgesaral@gmail.com';
+const CONTACT_EMAIL = 'forgesaral+root@gmail.com';
 const projectForm = document.querySelector('[data-project-form]');
 
 function buildBriefMailto({ name, email, business, summary }) {

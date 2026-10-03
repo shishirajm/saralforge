@@ -3,13 +3,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const src = path.join(root, 'src');
+const src = path.join(root, 'dist');
 const production = process.argv.includes('--production');
 const htmlFiles = (await readdir(src)).filter((file) => file.endsWith('.html'));
 const publicHtmlFiles = htmlFiles.filter((file) => !['404.html', 'products.html'].includes(file));
 const failures = [];
 const robots = await readFile(path.join(src, 'robots.txt'), 'utf8');
-const previewHtml = await Promise.all(htmlFiles.map((file) => readFile(path.join(src, file), 'utf8')));
+const pages = await Promise.all(htmlFiles.map((file) => readFile(path.join(src, file), 'utf8')));
 
 for (const file of htmlFiles) {
   const text = await readFile(path.join(src, file), 'utf8');
@@ -22,7 +22,7 @@ for (const file of htmlFiles) {
 }
 
 if (!production) {
-  if (previewHtml.some((text) => !text.includes('noindex, nofollow'))) {
+  if (pages.some((text) => !text.includes('noindex, nofollow'))) {
     failures.push('preview: one or more HTML pages can be indexed');
   }
   if (!/^Disallow:\s*\/$/m.test(robots)) {
@@ -56,5 +56,5 @@ if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join('\n'));
   process.exitCode = 1;
 } else {
-  console.log('Preview publishing checks passed.');
+  console.log(`${production ? 'Production' : 'Preview'} publishing checks passed.`);
 }
