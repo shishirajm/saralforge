@@ -34,7 +34,7 @@ test('every published guide page has the required SEO, structure and honesty mar
     assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, `${guide.slug}: one H1`);
     assert.match(html, new RegExp(`<link rel="canonical" href="${url}">`), `${guide.slug}: self-referencing canonical`);
     assert.match(html, new RegExp(`<meta property="og:url" content="${url}">`));
-    assert.match(html, /<meta property="og:image" content="https:\/\/saralforge\.com\/assets\/saral-forge-logo-display\.jpg">/);
+    assert.match(html, /<meta property="og:image" content="https:\/\/saralforge\.com\/assets\/saral-forge-og\.jpg">/);
     const title = html.match(/<title>([^<]+)<\/title>/)[1];
     assert.ok(!titles.has(title), `${guide.slug}: unique title`);
     titles.add(title);

@@ -104,12 +104,14 @@ document.querySelectorAll('[data-year]').forEach((node) => { node.textContent = 
 const CONTACT_EMAIL = 'forgesaral+root@gmail.com';
 const projectForm = document.querySelector('[data-project-form]');
 
-function buildBriefMailto({ name, email, business, summary }) {
+function buildBriefMailto({ name, email, business, need, timing, summary }) {
   const subject = `Project brief from ${name}`;
   const bodyLines = [
     summary,
     '',
     `Business or team: ${business || 'Not provided'}`,
+    `Help needed: ${need || 'Not provided'}`,
+    `Timing: ${timing || 'Not provided'}`,
     `Reply-to email: ${email}`
   ];
   const params = new URLSearchParams({ subject, body: bodyLines.join('\n') });
@@ -162,6 +164,8 @@ function submitProjectBrief(event) {
     name: name.value.trim(),
     email: email.value.trim(),
     business: projectForm.elements.business.value.trim(),
+    need: projectForm.elements.need.value,
+    timing: projectForm.elements.timing.value,
     summary: summary.value.trim()
   });
   status.classList.add('is-success');
@@ -170,6 +174,6 @@ function submitProjectBrief(event) {
 
 if (projectForm) {
   projectForm.addEventListener('submit', submitProjectBrief);
-  projectForm.querySelectorAll('input, textarea, button').forEach((control) => { control.disabled = false; });
+  projectForm.querySelectorAll('input, select, textarea, button').forEach((control) => { control.disabled = false; });
   document.querySelector('[data-js-required-hint]')?.remove();
 }

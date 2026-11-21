@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const SITE = 'https://saralforge.com';
-export const SHARE_IMAGE = `${SITE}/assets/saral-forge-logo-display.jpg`;
+export const SHARE_IMAGE = `${SITE}/assets/saral-forge-og.jpg`;
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = path.join(root, 'content', 'guides');
 
@@ -96,7 +96,7 @@ function shell({ title, description, canonicalPath, ogType = 'website', extraMet
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="theme-color" content="#0f1315">
-  <meta property="og:type" content="${ogType}"><meta property="og:site_name" content="Saral Forge"><meta property="og:title" content="${escapeHtml(fullTitle)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SHARE_IMAGE}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="648"><meta property="og:image:alt" content="Saral Forge — Smart Solutions. Made Simple.">${extraMeta}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(fullTitle)}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${SHARE_IMAGE}"><title>${escapeHtml(fullTitle)}</title><link rel="canonical" href="${url}">
+  <meta property="og:type" content="${ogType}"><meta property="og:site_name" content="Saral Forge"><meta property="og:title" content="${escapeHtml(fullTitle)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${SHARE_IMAGE}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Saral Forge logo beside the words: Websites and practical AI for small businesses.">${extraMeta}<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(fullTitle)}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${SHARE_IMAGE}"><title>${escapeHtml(fullTitle)}</title><link rel="canonical" href="${url}">
   <link rel="icon" href="/assets/favicon.png" type="image/png"><link rel="stylesheet" href="/styles.css"><script type="module" src="/app.js"></script>
   <script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}</script>
 </head>
