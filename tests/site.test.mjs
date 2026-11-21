@@ -128,3 +128,14 @@ test('hosting config applies the required security headers', async () => {
   assert.ok(Array.isArray(config.hosting.predeploy));
   assert.ok(config.hosting.predeploy.includes('npm run build'));
 });
+
+test('delivered client websites are shown as real work, not illustrations', async () => {
+  const clients = ['https://www.macprecitecindia.com/', 'https://drive2door.com.au/'];
+  for (const file of ['index.html', 'work.html']) {
+    const html = await readFile(path.join(src, file), 'utf8');
+    for (const url of clients) {
+      assert.ok(html.includes(`href="${url}"`), `${file} should link to ${url}`);
+    }
+    assert.doesNotMatch(html, /Illustrative workflow|Evidence pending approval/, `${file} still labels delivered work as illustrative`);
+  }
+});
