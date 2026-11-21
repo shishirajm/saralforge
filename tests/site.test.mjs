@@ -53,7 +53,7 @@ test('safe form behaviour remains explicit', async () => {
   assert.match(start, /type="submit" disabled/);
   assert.match(app, /mailto:\$\{CONTACT_EMAIL\}/);
   assert.match(app, /if \(website\.value\)/);
-  assert.match(app, /querySelectorAll\('input, textarea, button'\).*disabled = false/);
+  assert.match(app, /querySelectorAll\('input, select, textarea, button'\).*disabled = false/);
 });
 
 test('unpublished pages stay non-indexed and public pages stay indexable', async () => {
@@ -137,5 +137,49 @@ test('delivered client websites are shown as real work, not illustrations', asyn
       assert.ok(html.includes(`href="${url}"`), `${file} should link to ${url}`);
     }
     assert.doesNotMatch(html, /Illustrative workflow|Evidence pending approval/, `${file} still labels delivered work as illustrative`);
+  }
+});
+
+test('the home hero leads with the offer and shows delivered proof', async () => {
+  const html = await readFile(path.join(src, 'index.html'), 'utf8');
+  const hero = html.slice(html.indexOf('<section class="hero'), html.indexOf('</section>'));
+  assert.match(hero, /<h1>[^<]*Websites[^<]*AI/i, 'H1 names websites and AI');
+  assert.ok(hero.includes('href="https://www.macprecitecindia.com/"') && hero.includes('href="https://drive2door.com.au/"'), 'hero links to delivered client sites');
+  assert.doesNotMatch(html, /experience-proof/, 'unsupported "Proven" box removed');
+  assert.ok((html.match(/Proven industry experience/gi) || []).length <= 1, 'experience phrase used at most once');
+  assert.ok(html.indexOf('id="work"') < html.indexOf('id="services"'), 'proof comes before services');
+});
+
+test('every page shares the dedicated 1200 x 630 social image', async () => {
+  const jpg = await readFile(path.join(src, 'assets', 'saral-forge-og.jpg'));
+  let offset = 2;
+  while (offset < jpg.length && !(jpg[offset] === 0xff && jpg[offset + 1] >= 0xc0 && jpg[offset + 1] <= 0xc2)) offset += 2 + jpg.readUInt16BE(offset + 2);
+  assert.equal(jpg.readUInt16BE(offset + 7), 1200, 'share image width');
+  assert.equal(jpg.readUInt16BE(offset + 5), 630, 'share image height');
+  assert.ok(jpg.length < 150 * 1024, 'share image stays under 150 KB');
+  const shell = await readFile(path.join(projectRoot, 'scripts', 'guides.mjs'), 'utf8');
+  assert.match(shell, /SHARE_IMAGE = `\$\{SITE\}\/assets\/saral-forge-og\.jpg`/, 'generated guides use the share image');
+  for (const file of htmlFiles.filter((name) => !['404.html'].includes(name))) {
+    const html = await readFile(path.join(src, file), 'utf8');
+    assert.match(html, /og:image" content="https:\/\/saralforge\.com\/assets\/saral-forge-og\.jpg"/, `${file} og:image`);
+    assert.match(html, /twitter:image" content="https:\/\/saralforge\.com\/assets\/saral-forge-og\.jpg"/, `${file} twitter:image`);
+  }
+});
+
+test('the project brief asks what is needed and when, and emails both', async () => {
+  const start = await readFile(path.join(src, 'start.html'), 'utf8');
+  const app = await readFile(path.join(src, 'app.js'), 'utf8');
+  for (const id of ['need', 'timing']) {
+    assert.match(start, new RegExp(`<label for="${id}">`), `${id} is labelled`);
+    assert.match(start, new RegExp(`<select id="${id}" name="${id}"[^>]*disabled`), `${id} disabled until JS runs`);
+  }
+  assert.match(app, /Help needed: /);
+  assert.match(app, /Timing: /);
+});
+
+test('each page has a single skip link', async () => {
+  for (const file of htmlFiles) {
+    const html = await readFile(path.join(src, file), 'utf8');
+    assert.equal((html.match(/class="skip-link"/g) || []).length, 1, `${file} skip links`);
   }
 });
